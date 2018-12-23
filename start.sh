@@ -6,7 +6,7 @@ SSID_NAME='Sweepy Gripey'
 # The channel of that SSID that Dash will try to connect to
 # You can either choose this at network creation time,
 # or determine it afterwards via tcpdump
-CHANNEL=1
+CHANNEL=6
 
 # The capability field of your WiFi dongle
 # You can determine this via `iw phy`
