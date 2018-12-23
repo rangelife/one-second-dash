@@ -40,6 +40,9 @@ def do_ring():
     cmd = 'alsaplayer -o alsa --quiet ./doorbell.wav'
     soundproc = subprocess.Popen(cmd.split(), close_fds=True,
                                  stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
+    cmd = 'curl http://localhost:3888/off'
+    curlproc = subprocess.Popen(cmd.split(), close_fds=True,
+                                 stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
 
 cmd = 'tcpdump -l -K -q -i DoorbellMonitor -n -s 256'
 proc = subprocess.Popen(cmd.split(), close_fds=True,
