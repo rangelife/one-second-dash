@@ -19,7 +19,7 @@ case "$1" in
     echo "Starting noip"
     # run application you want to start
 	cd "__LOCATION__"
-	./start.sh
+	./start.sh > /var/log/one-second-dash.log 2>/var/log/one-second-dash.err
     ;;
   stop)
     echo "Stopping noip"
