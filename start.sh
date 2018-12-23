@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# The WiFi SSID that your Dash will try to connect to 
-SSID_NAME='Sweepy Gripey'
+# The WiFi SSIDs that your Dash will try to connect to are defined in file "dash_ssids"
 
 # The channel of that SSID that Dash will try to connect to
 # You can either choose this at network creation time,
@@ -21,5 +20,5 @@ cd $(dirname $(readlink -f $0))
 # The break allows us to control-C out of this loop.
 while true; do
   sudo ./setup_monitor_interface.sh "$CHANNEL" "$CAP_FIELD" 2>&1
-  sudo ./doorbell.py "$SSID_NAME" 2>&1 || break
+  sudo ./doorbell.py 2>&1 || break
 done
