@@ -32,6 +32,8 @@ fi
 iw dev | grep -q "wlan$PHYIDX" && \
   sudo iw dev wlan$PHYIDX del
 
+sudo iw dev rename4 del
+
 # Add monitor, bring it up, set its channel
 MONITOR_NAME=DoorbellMonitor
 sudo iw dev $MONITOR_NAME del 2>/dev/null || true
