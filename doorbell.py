@@ -35,14 +35,22 @@ for SSID_TOKEN_PRINT in SSID_TOKENS:
     print SSID_TOKEN_PRINT
     
 DEVNULL = open(os.devnull, 'wb')
-def do_ring():
-    """ Play the doorbell.wav file. Don't wait for it to finish. """
-    cmd = 'alsaplayer -o alsa --quiet ./doorbell.wav'
+def do_ring(ssid):
+    print "Doing ring for "+ssid
+    cmd = './ring-'+ssid.replace(' ','-')
     soundproc = subprocess.Popen(cmd.split(), close_fds=True,
                                  stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
-    cmd = 'curl http://localhost:3888/off'
-    curlproc = subprocess.Popen(cmd.split(), close_fds=True,
-                                 stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
+
+    # """ Play the doorbell.wav file. Don't wait for it to finish. """
+    # cmd = 'alsaplayer -o alsa --quiet ./doorbell.wav'
+    # soundproc = subprocess.Popen(cmd.split(), close_fds=True,
+    #                              stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
+    # cmd = 'curl http://localhost:3888/scheme/xmas'
+    # lightproc = subprocess.Popen(cmd.split(), close_fds=True,
+    #                              stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
+    # cmd = 'squeezeplay livingroom spotify:user:smooth1960:playlist:2MUmx4vk6xWBKuxvqzg12y'
+    # tuneproc = subprocess.Popen(cmd.split(), close_fds=True,
+    #                              stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
 
 cmd = 'tcpdump -l -K -q -i DoorbellMonitor -n -s 256'
 proc = subprocess.Popen(cmd.split(), close_fds=True,
@@ -61,4 +69,4 @@ while True:
                 last_played = now
                 sys.stdout.write(line)
                 sys.stdout.flush()
-                do_ring()
+                do_ring(SSID_TOKEN)
