@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # The WiFi SSIDs that your Dash will try to connect to are defined in file "dash_ssids"
 
@@ -20,5 +20,5 @@ cd $(dirname $(readlink -f $0))
 # The break allows us to control-C out of this loop.
 while true; do
   sudo ./setup_monitor_interface.sh "$CHANNEL" "$CAP_FIELD" 2>&1
-  sudo ./doorbell.py 2>&1 || break
+  sudo ./doorbell.py 2>&1
 done
