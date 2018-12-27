@@ -1,4 +1,0 @@
-#!/bin/bash
-curl http://localhost:3888/scheme/xmas
-squeezeplay livingroom spotify:track:5hslUAKq9I9CG2bAulFkHN
-alsaplayer -o alsa --quiet ./doorbell.wav'
