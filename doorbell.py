@@ -37,8 +37,8 @@ for SSID_TOKEN_PRINT in SSID_TOKENS:
 DEVNULL = open(os.devnull, 'wb')
 def do_ring(ssid):
     print "Doing ring for "+ssid
-    cmd = './ring-'+ssid.replace(' ','-')
     # """ Launch the handler.. Don't wait for it to finish. """
+    cmd = 'bash ./ring-'+ssid.replace(' ','-')+" "+ssid.replace(' ','-')
     soundproc = subprocess.Popen(cmd.split(), close_fds=True,
                                  stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
 
