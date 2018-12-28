@@ -7,9 +7,11 @@
 curl https://maker.ifttt.com/trigger/dash-$1/with/key/$IFTTT_MAKER_KEY
 
 # xmas
-curl http://localhost:3888/scene/xmas
-squeezeplay livingroom spotify:track:5hslUAKq9I9CG2bAulFkHN
-alsaplayer -o alsa --quiet ./doorbell.wav'
+# curl http://localhost:3888/scene/xmas
+# squeezeplay livingroom spotify:track:5hslUAKq9I9CG2bAulFkHN
 
 # d&b top 50
 squeezeplay bedroom spotify:user:ukfmusic:playlist:0Zarq4BVkFkZOWkmqsfrjA
+
+# ding dong
+alsaplayer -o alsa --quiet ./doorbell.wav'
