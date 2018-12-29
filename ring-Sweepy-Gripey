@@ -11,7 +11,12 @@ curl https://maker.ifttt.com/trigger/dash-$1/with/key/$IFTTT_MAKER_KEY
 # squeezeplay livingroom spotify:track:5hslUAKq9I9CG2bAulFkHN
 
 # d&b top 50
-squeezeplay bedroom spotify:user:ukfmusic:playlist:0Zarq4BVkFkZOWkmqsfrjA
+#squeezeplay bedroom spotify:user:ukfmusic:playlist:0Zarq4BVkFkZOWkmqsfrjA
+
+# NYE
+squeezeplay bedroom spotify:user:esthermiller:playlist:091SfUUyCjZy4bvmgwm59l
+#squeezeplay bedroom playlist shuffle 1
 
 # ding dong
 alsaplayer -o alsa --quiet ./doorbell.wav'
+
