@@ -14,12 +14,11 @@ curl https://maker.ifttt.com/trigger/dash-$1/with/key/$IFTTT_MAKER_KEY
 #squeezeplay bedroom spotify:user:ukfmusic:playlist:0Zarq4BVkFkZOWkmqsfrjA
 
 # NYE
+squeezeplay bedroom --raw playlist shuffle 1 &
+squeezeplay bedroom --raw mixer volume 0
 squeezeplay bedroom spotify:user:esthermiller:playlist:091SfUUyCjZy4bvmgwm59l
-
-# set vol and shuffle
-squeezeplay bedroom --raw mixer volume 10
-squeezeplay bedroom --raw playlist shuffle 1
 squeezeplay bedroom --raw playlist index +1
+squeezeplay bedroom --raw mixer volume 20
 
 # ding dong
 alsaplayer -o alsa --quiet ./doorbell.wav
