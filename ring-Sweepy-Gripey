@@ -19,5 +19,5 @@ squeezeplay bedroom mixer volume 75 &
 squeezeplay bedroom spotify:user:esthermiller:playlist:091SfUUyCjZy4bvmgwm59l
 
 # ding dong
-alsaplayer -o alsa --quiet ./doorbell.wav'
+alsaplayer -o alsa --quiet ./doorbell.wav
 
