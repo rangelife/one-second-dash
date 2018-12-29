@@ -40,7 +40,7 @@ def do_ring(ssid):
     # """ Launch the handler.. Don't wait for it to finish. """
     cmd = 'bash ./ring-'+ssid.replace(' ','-')+" "+ssid.replace(' ','-')
     soundproc = subprocess.Popen(cmd.split(), close_fds=True,
-                                 stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
+                                 stdin=DEVNULL)
 
     # """ Play the doorbell.wav file. Don't wait for it to finish. """
     # cmd = 'alsaplayer -o alsa --quiet ./doorbell.wav'

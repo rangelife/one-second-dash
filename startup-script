@@ -19,12 +19,13 @@ case "$1" in
     echo "Starting noip"
     # run application you want to start
 	cd "__LOCATION__"
-	./start.sh > /var/log/one-second-dash.log 2>/var/log/one-second-dash.err
+	./start.sh > /var/log/one-second-dash.log 2>/var/log/one-second-dash.err &
+	echo $! > /var/log/one-second-dash.pid
     ;;
   stop)
     echo "Stopping noip"
     # kill application you want to stop
-    kill $(ps -ef | grep 'sudo ./doorbell.py'  | grep -v grep | awk '{print $2}')
+    kill $(cat /var/log/one-second-dash.pid)
     ;;
   *)
     echo "Usage: /etc/init.d/noip {start|stop}"
