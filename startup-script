@@ -1,8 +1,8 @@
 #! /bin/sh
-# /etc/init.d/noip 
+# /etc/init.d/one-second-dash 
 
 ### BEGIN INIT INFO
-# Provides:          noip
+# Provides:          one-second-dash
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
@@ -16,19 +16,19 @@
 # Carry out specific functions when asked to by the system
 case "$1" in
   start)
-    echo "Starting noip"
+    echo "Starting one-second-dash"
     # run application you want to start
 	cd "__LOCATION__"
 	./start.sh > /var/log/one-second-dash.log 2>/var/log/one-second-dash.err &
 	echo $! > /var/log/one-second-dash.pid
     ;;
   stop)
-    echo "Stopping noip"
+    echo "Stopping one-second-dash"
     # kill application you want to stop
     kill $(cat /var/log/one-second-dash.pid)
     ;;
   *)
-    echo "Usage: /etc/init.d/noip {start|stop}"
+    echo "Usage: /etc/init.d/one-second-dash {start|stop}"
     exit 1
     ;;
 esac
