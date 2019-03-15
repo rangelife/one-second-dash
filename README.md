@@ -1,3 +1,34 @@
+ROB:
+
+to add a new dash button:
+
+plug in AD Yellow router
+plug LAN from laptop into port 1-4
+go into config (http://192.168.1.252, admin/usual)
+change BOTH Wifi Names to Sweepy New Name, save, apply
+
+unplug. plug upstream port into main internet connected router
+reconnect from laptop via wifi. make sure it can reach through to internet
+
+then on phone in amazon shopping, add dash button, connect it to new network
+
+once product selection appears,
+
+in router, change BOTH Wifi Names back to Sweepy Nothing, save, apply. now unplug it
+
+
+in this repo, add a line to dash_ssids for the new network name
+
+and add a script based on one of the others
+
+and save and push to github, pull down to pi
+
+
+
+
+=========
+
+
 # One Second Dash
 
 One Second Dash is a bit of code to react to Amazon Dash buttons, designed for the Raspberry Pi.
