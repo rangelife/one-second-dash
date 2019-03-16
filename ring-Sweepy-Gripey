@@ -18,7 +18,7 @@ squeezeplay bedroom --raw mixer volume 0
 #nye squeezeplay bedroom spotify:user:esthermiller:playlist:091SfUUyCjZy4bvmgwm59l
 squeezeplay bedroom spotify:user:rangelife2:playlist:0SMpzciQeLySoYwkmhCDHd
 squeezeplay bedroom --raw playlist index +1
-squeezeplay bedroom --raw mixer volume 20
+squeezeplay bedroom --raw mixer volume 60
 
 # ding dong
 alsaplayer -o alsa --quiet ./doorbell.wav
