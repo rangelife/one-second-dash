@@ -7,4 +7,9 @@
 # tell ifttt
 curl https://maker.ifttt.com/trigger/dash-$1/with/key/$IFTTT_MAKER_KEY
 
-henremind
+# toggle reminders
+if pgrep henremind; then
+    pkill henremind
+else
+    henremind 10
+fi
