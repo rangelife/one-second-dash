@@ -1,29 +1,10 @@
 #!/bin/bash
 
 
-echo NOM NOM
-exit
-
 # load keys
 . /etc/environment
 
 # tell ifttt
 curl https://maker.ifttt.com/trigger/dash-$1/with/key/$IFTTT_MAKER_KEY
 
-# xmas
-# curl http://localhost:3888/scene/xmas
-# squeezeplay livingroom spotify:track:5hslUAKq9I9CG2bAulFkHN
-
-
-# bedroom playlist
-squeezeplay bedroom --raw playlist shuffle 1 &
-squeezeplay bedroom --raw mixer volume 0
-# d&b top 50 #squeezeplay bedroom spotify:user:ukfmusic:playlist:0Zarq4BVkFkZOWkmqsfrjA 
-#nye squeezeplay bedroom spotify:user:esthermiller:playlist:091SfUUyCjZy4bvmgwm59l
-squeezeplay bedroom spotify:user:rangelife2:playlist:0SMpzciQeLySoYwkmhCDHd
-squeezeplay bedroom --raw playlist index +1
-squeezeplay bedroom --raw mixer volume 20
-
-# ding dong
-alsaplayer -o alsa --quiet ./doorbell.wav
-
+henremind
