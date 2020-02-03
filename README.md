@@ -1,28 +1,55 @@
-ROB:
+# ROB:
 
-to add a new dash button:
+## to install this whole thing:
+do "Raspberry Pi Setup" below
+
+
+## to add a new dash button:
 
 plug in AD Yellow router
 plug LAN from laptop into port 1-4
 go into config (http://192.168.1.252, admin/usual)
 change BOTH Wifi Names to Sweepy New Name, save, apply
 
-unplug. plug upstream port into main internet connected router
-reconnect from laptop via wifi. make sure it can reach through to internet
+unplug.
 
-then on phone in amazon shopping, add dash button, connect it to new network
+[ can probably skip this section
+ plug upstream port into main internet connected router
+ reconnect from laptop via wifi. make sure it can reach through to internet
+]
 
-once product selection appears,
+press button til blue flashy light on dash button.
+connect to Amazon ConfigureMe wifi.
 
-in router, change BOTH Wifi Names back to Sweepy Nothing, save, apply. now unplug it
+then run ./setup-dashbutton.py 'Sweepy%20New%20Name' 'blablapasswordshouldntmatter'
+
+[ can probably skip this section
+ once product selection appears,
+]
+
+reconnect router, change BOTH Wifi Names back to Sweepy Nothing, save, apply. now unplug it
 
 
 in this repo, add a line to dash_ssids for the new network name
 
 and add a script based on one of the others
 
+and add to the below table
+
 and save and push to github, pull down to pi
 
+
+## existing dash buttons:
++------------------+-----------------------+---------------+
+| SSID             | Logo                  | Function      |
++------------------+-----------------------+---------------+
+| Sweepy Gripey    | Gaviscon              | Playlist      |
+| Sweepy Nom Nom   | some pet food is it?  | 10 min timer  |
+| Sweepy Poo Poo   | Andrex                |               |
+| Sweepy Scrubadub | Ariel                 |               |
+| Sweepy Ting      | Finish                |               |
+| Sweepy Pores     | Neutrogena            |               |
++------------------+-----------------------+---------------+
 
 
 
@@ -62,7 +89,8 @@ This tutorial assumes you also want to have your RPi on your normal WiFi network
 
 3. If you are using two dongles, we need to be able to tell them apart. We do this by looking at the _capabilities_ according to `iw phy`. Run `iw phy` and look for a field like `Capabilities:`. Figure out which one corresponds to your monitor dongle and write that down, for example, `Capabilities: 0x1862`
     
-    One way to figure this out is to run `iw phy` with only one dongle attached. That tells you the capabilities for that dongle.
+    One way to figure this out is to run `iw phy` with only one dongle attached [RJLH: i.e.
+    before you plug in the new dongle]. That tells you the capabilities for that dongle.
 	
 	If you are using Ethernet, you'll only get one Capabilities field.
     
@@ -82,6 +110,14 @@ This tutorial assumes you also want to have your RPi on your normal WiFi network
         
         allow-hotplug wlan1
 	
+    [RJLH: this is bunk. since we don't care about the system being a wifi client, just
+
+        sudo apt-get remove wpasupplicant
+
+    .. turn off, insert dongle, turn on
+
+    ]
+
     `YourWiFiSSID` is replaced with your network's SSID (the real one that your RPi connects to, not the fake one for the Dash). The wpa-psk value can be obtained via `wpa_passphrase YourWiFiSSID` (`sudo apt-get install wpasupplicant` if necessary)
     
     (Note: here we're bravely hoping wlan0 corresponds to the correct adapter, since I don't know of a better way. If you would like to update this, maybe with persistent-net-rules instructions, please open a PR!)
@@ -89,7 +125,7 @@ This tutorial assumes you also want to have your RPi on your normal WiFi network
 5. Clone this repo on your RPi
 
 6. Edit `start.sh`:
-   * Set `SSID_NAME` to the SSID you chose during Dash setup
+   * Set `SSID_NAME` to the SSID you chose during Dash setup [RJLH - delegated to the dash_ssids file]
    * Set `CHANNEL` to the channel you identified in step 2 under "Dash button setup".
    * Set `CAP_FIELD` to the capabilities field you identified in step 3
    

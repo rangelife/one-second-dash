@@ -63,8 +63,8 @@ while True:
     if not line:
         print "tcpdump exited"
         break
-#    if "Sweepy" in line:
-#        print line
+    if "Probe Request" in line:
+        print line
     for SSID_TOKEN in SSID_TOKENS:
         if SSID_TOKEN in line:
             now = time.time()
