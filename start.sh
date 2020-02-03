@@ -9,7 +9,7 @@ CHANNEL=1
 
 # The capability field of your WiFi dongle
 # You can determine this via `iw phy`
-CAP_FIELD="Capabilities: 0x172"
+CAP_FIELD="Capabilities: 0x17e"
 
 # cd to directory containing this script
 cd $(dirname $(readlink -f $0))
