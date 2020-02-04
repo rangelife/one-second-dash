@@ -9,25 +9,21 @@ do "Raspberry Pi Setup" below
 plug in AD Yellow router
 plug LAN from laptop into port 1-4
 go into config (http://192.168.1.252, admin/usual)
-change BOTH Wifi Names to Sweepy New Name, save, apply
+change BOTH Wifi Names to Sweepy New Name, ensure channel 1, save, apply
 
 unplug.
 
-[ can probably skip this section
- plug upstream port into main internet connected router
- reconnect from laptop via wifi. make sure it can reach through to internet
-]
+plug upstream port into main internet connected router
+reconnect from laptop via wifi. make sure it can reach through to internet [NEEDED!]
 
 press button til blue flashy light on dash button.
 connect to Amazon ConfigureMe wifi.
 
-then run ./setup-dashbutton.py 'Sweepy%20New%20Name' 'blablapasswordshouldntmatter'
+then run ./setup-dashbutton.py 'Sweepy%20New%20Name' 'password matters'
 
-[ can probably skip this section
- once product selection appears,
-]
+(NOTE DOWN THE MAC ADDRESS of the dash button spat out here)
 
-reconnect router, change BOTH Wifi Names back to Sweepy Nothing, save, apply. now unplug it
+reconnect router wired to laptop , change BOTH Wifi Names back to Sweepy Nothing, save, apply. now unplug it
 
 
 in this repo, add a line to dash_ssids for the new network name
@@ -38,6 +34,17 @@ and add to the below table
 
 and save and push to github, pull down to pi
 
+re run the monitor script ./start.sh
+
+check it's firing.
+
+if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn't work.
+
+so we'll need to use the MAC address and longpress, hopefully can be seen in some kind of scan..
+
+    sudo iwlist wlan0 scanning essid 'Amazon ConfigureMe'
+
+.. need to ensure "Last beacon" is <1sec
 
 ## existing dash buttons:
 +------------------+-----------------------+---------------+
@@ -46,10 +53,16 @@ and save and push to github, pull down to pi
 | Sweepy Gripey    | Gaviscon              | Playlist      |
 | Sweepy Nom Nom   | some pet food is it?  | 10 min timer  |
 | Sweepy Poo Poo   | Andrex                |               |
-| Sweepy Scrubadub | Ariel                 |               |
-| Sweepy Ting      | Finish                |               |
-| Sweepy Pores     | Neutrogena            |               |
 +------------------+-----------------------+---------------+
+
+
++--------------+-----------------------+---------------+
+| MAC          | Logo                  | Function      |
++--------------+-----------------------+---------------+
+| AC63BE8FE729 | Ariel                 |               |
+| 50F5DA7F0FDC | Finish                |               |
+| 50F5DA81D305 | Neutrogena            |               |
++--------------+-----------------------+---------------+
 
 
 
@@ -137,6 +150,13 @@ This tutorial assumes you also want to have your RPi on your normal WiFi network
 
 1. To make the doorbell script run at boot, you can edit `/etc/rc.local` file to invoke `start.sh` (before exit 0):
 
-        sudo -u pi /home/pi/one-second-dash/start.sh > /var/log/doorbell.log &
+        sudo -u pi /home/pi/rattus/one-second-dash/start.sh > /var/log/doorbell.log &
+
+[rjlh while you're there... comment this bit out...
+
+    #Start Accesspoint on Boot if no network connection available
+    #/var/www/max2play/application/plugins/accesspoint/scripts/start_accesspoint_onboot.sh
+
+]
 
 **Happy Dashing!**
