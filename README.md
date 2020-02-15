@@ -40,16 +40,16 @@ and save and push to github, pull down to pi
 
 
 ## existing dash buttons:
-+------------------+-----------------------+---------------+
-| SSID             | Logo                  | Function      |
-+------------------+-----------------------+---------------+
-| Sweepy Gripey    | Gaviscon              | Playlist      |
-| Sweepy Nom Nom   | some pet food is it?  | 10 min timer  |
-| Sweepy Poo Poo   | Andrex                |               |
-| Sweepy Scrubadub | Ariel                 |               |
-| Sweepy Ting      | Finish                |               |
-| Sweepy Pores     | Neutrogena            |               |
-+------------------+-----------------------+---------------+
++------------------+-----------------------+---------------+--------------+
+| SSID             | Logo                  | Function      | Requirements |
++------------------+-----------------------+---------------+--------------+
+| Sweepy Gripey    | Gaviscon              | Playlist upstairs bedroom      | cmd: squeezeplay  |
+| Sweepy Nom Nom   | Pedigree              | 10 min timer  | cmd: henremind, sayhard, sayg ; apt: python3-pip mplayer sox libsox-fmt-mp3 ; pip3: requests  |
+| Sweepy Poo Poo   | Andrex                | Playlist downstairs far     | cmd: squeezeplay  |
+| Sweepy Scrubadub | Ariel                 |               |              |
+| Sweepy Ting      | Finish                |               |              |
+| Sweepy Pores     | Neutrogena            |               |              |
++------------------+-----------------------+---------------+--------------+
 
 
 
