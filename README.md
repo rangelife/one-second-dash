@@ -1,5 +1,7 @@
 # ROB:
 
+SEE ALSO JOURNAL.txt (above above this)
+
 ## to install this whole thing:
 do "Raspberry Pi Setup" below
 
@@ -7,9 +9,19 @@ do "Raspberry Pi Setup" below
 ## to add a new dash button:
 
 plug in AD Yellow router
-plug LAN from laptop into port 1-4
+
+either
+{
+    see if laptop can connect to "Sweepy Nothing"
+}
+.. OR ..
+{
+    plug LAN from laptop into port 1-4; set up LAN port as 192.168.1.0/24 static
+}
+
 go into config (http://192.168.1.252, admin/usual)
 change BOTH Wifi Names to Sweepy New Name, ensure channel 1, save, apply
+go to Wifi Security, unmask password and remember its password
 
 unplug.
 
@@ -19,11 +31,11 @@ reconnect from laptop via wifi. make sure it can reach through to internet [NEED
 press button til blue flashy light on dash button.
 connect to Amazon ConfigureMe wifi.
 
-then run ./setup-dashbutton.py 'Sweepy%20New%20Name' 'password matters'
+then run ./setup-dashbutton.py 'Sweepy%20New%20Name' 'WhateverThePasswordWas'
 
 (NOTE DOWN THE MAC ADDRESS of the dash button spat out here)
 
-reconnect router wired to laptop , change BOTH Wifi Names back to Sweepy Nothing, save, apply. now unplug it
+change BOTH Wifi Names back to Sweepy Nothing, save, apply
 
 
 in this repo, add a line to dash_ssids for the new network name
@@ -40,24 +52,29 @@ check it's firing.
 
 if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn't work.
 
-so we'll need to use the MAC address and longpress, hopefully can be seen in some kind of scan..
+next try:
+
+Put Dash Button in setup mode by holding down the button until the LED flashes blue.
+Connect to the Amazon ConfigureMe WiFi network and visit http://192.168.0.1.
+You’ll see the button’s hardware (MAC) address. Block its Internet access in your router’s settings. If you don’t do this, the button will get an over-the-air update when it phones home and get bricked.
+While in setup mode, play this .wav file [RJLH: write_customer_secret.s.wav in this folder] through some earbuds aimed at the Dash Button.
+If the LED turns green, the exploit worked! Carry on to step (3).
+If the LED turns off, you’re probably on a firmware version that fixed the vulnerability. Unfortunately, you’re out of luck if this is the case. (unless someone finds another vulnerability)
+Put the Button in setup mode again.
+Connect to the WiFi network it creates — Amazon ConfigureMe.
+Visit this URL*: http://192.168.0.1/?amzn_ssid=<wifi_network_name>&amzn_pw=<wifi_network_pw>. (obviously substituting wifi_network_name and wifi_network_pw for the desired values)
+
+[from https://blog.christophermullins.com/2019/12/20/rescue-your-amazon-dash-buttons/]
+
+next try:
+
+longpress, scan for the MAC address
 
     sudo iwlist wlan0 scanning essid 'Amazon ConfigureMe'
 
 .. need to ensure "Last beacon" is <1sec
 
-## existing dash buttons:
-+------------------+-----------------------+---------------+--------------+
-| SSID             | Logo                  | Function      | Requirements |
-+------------------+-----------------------+---------------+--------------+
-| Sweepy Gripey    | Gaviscon              | Playlist upstairs bedroom      | cmd: squeezeplay  |
-| Sweepy Nom Nom   | Pedigree              | 10 min timer  | cmd: henremind, sayhard, sayg ; apt: python3-pip mplayer sox libsox-fmt-mp3 ; pip3: requests  |
-| Sweepy Poo Poo   | Andrex                | Playlist downstairs far     | cmd: squeezeplay  |
-| Sweepy Scrubadub | Ariel                 |               |              |
-| Sweepy Ting      | Finish                |               |              |
-| Sweepy Pores     | Neutrogena            |               |              |
-+------------------+-----------------------+---------------+--------------+
-
+.. and would have to implement something that scans to look for those MACs:
 
 +--------------+-----------------------+---------------+
 | MAC          | Logo                  | Function      |
@@ -66,6 +83,20 @@ so we'll need to use the MAC address and longpress, hopefully can be seen in som
 | 50F5DA7F0FDC | Finish                |               |
 | 50F5DA81D305 | Neutrogena            |               |
 +--------------+-----------------------+---------------+
+
+
+## existing dash buttons:
++--------------------+-----------------------+-------------------+
+| SSID               | Logo                  | Function          |
++--------------------+-----------------------+-------------------+
+| Sweepy Gripey      | Gaviscon              | bedroom playlist  |
+| Sweepy Nom Nom     | some pet food is it?  | bed 10 min timer  |
+| Sweepy Poo Poo     | Andrex                | Barry White       |
+| Sweepy Scrub Scrub | Ariel                 | liv rm playlist   |
+| Sweepy Zing Ding   | Finish                | all lights on/off |
+| Sweepy Puff Buff   | Neutrogena            | kitchen playlist  |
++--------------------+-----------------------+-------------------+
+
 
 
 
