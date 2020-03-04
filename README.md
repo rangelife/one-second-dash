@@ -31,7 +31,7 @@ reconnect from laptop via wifi. make sure it can reach through to internet [NEED
 press button til blue flashy light on dash button.
 connect to Amazon ConfigureMe wifi.
 
-then run ./setup-dashbutton.py 'Sweepy%20New%20Name' 'WhateverThePasswordWas'
+then run ./setup-dashbutton.py 'Sweepy New Name' 'WhateverThePasswordWas'
 
 (NOTE DOWN THE MAC ADDRESS of the dash button spat out here)
 
@@ -66,7 +66,7 @@ Visit this URL*: http://192.168.0.1/?amzn_ssid=<wifi_network_name>&amzn_pw=<wifi
 
 [from https://blog.christophermullins.com/2019/12/20/rescue-your-amazon-dash-buttons/]
 
-next try:
+as last resort, try:
 
 longpress, scan for the MAC address
 
@@ -84,18 +84,30 @@ longpress, scan for the MAC address
 | 50F5DA81D305 | Neutrogena            |               |
 +--------------+-----------------------+---------------+
 
+(I actually fixed these ones with the buffer overrun hack wav)
+
 
 ## existing dash buttons:
-+--------------------+-----------------------+-------------------+
-| SSID               | Logo                  | Function          |
-+--------------------+-----------------------+-------------------+
-| Sweepy Gripey      | Gaviscon              | bedroom playlist  |
-| Sweepy Nom Nom     | some pet food is it?  | bed 10 min timer  |
-| Sweepy Poo Poo     | Andrex                | Barry White       |
-| Sweepy Scrub Scrub | Ariel                 | liv rm playlist   |
-| Sweepy Zing Ding   | Finish                | all lights on/off |
-| Sweepy Puff Buff   | Neutrogena            | kitchen playlist  |
-+--------------------+-----------------------+-------------------+
++--------------------+-----------------------+------------+-------------------+
+| SSID               | Logo                  | Location   | Function          |
++--------------------+-----------------------+------------+-------------------+
+| Sweepy Gripey      | Gaviscon              | rk bed     | nye playlist      |
+| Sweepy Nom Nom     | Pedigree              | rk bedside | 10 min timer      |
+| Sweepy Poo Poo     | Andrex                | sp bed far | Barry White       |
+| Sweepy Scrub Scrub | Ariel                 | liv rm     | db playlist       |
+| Sweepy Zing Ding   | Finish                |            |                   |
+| Sweepy Puff Buff   | Neutrogena            | kitchen    | rob playlist      |
+| Sweepy Fuzz Scrape | Wilkinson             | side hall  | all lights off    |
+| Sweepy Fuzz Slash  | Wilkinson             | front door | all lights off    |
+| Sweepy Poo Plops   | Andrex                | main hall  | kate kitchen      |
+| Sweepy Dog Breath  | Listerine             |            | ?                 |
+| Sweepy Bin Juice   | Brabantia             |            | ?                 |
+| Sweepy Puff Jollop | Neutrogena            | liv rm     | ?hen 1 play/day   |
+| Sweepy Babba Plops | Huggies               | rk bed     | ?yank playlist    |
+| Sweepy Ralph Bowl  | Dettol                | spare rm   | ?yank playlist    |
+| Sweepy Stink Mask  | Air Wick              | liv rm     | ?yank playlist    |
+| Sweepy Gloop Face  | Aveeno                | kitchen    | ?yank playlist    |
++--------------------+-----------------------+------------+-------------------+
 
 
 
