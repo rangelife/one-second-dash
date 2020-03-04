@@ -2,6 +2,7 @@
 import requests
 import re
 import sys
+import urllib
 
 # Initial work from: https://mpetroff.net/2016/07/new-amazon-dash-button-teardown-jk29lp/
 
@@ -34,6 +35,7 @@ def wait_for_device():
     return mac
 
 def configure_wifi(ssid, password):
+    ssid = urllib.quote(ssid)
     print("* Configure Dash button to connect to \"%s\"" % ssid)
     # is the ssid in range ?
     r = h.get(BASE_URL, headers={'Content-Type': 'application/json'}, timeout=5)
