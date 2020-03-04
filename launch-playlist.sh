@@ -31,6 +31,15 @@ elif [ "$1" == Sweepy-Puff-Buff ]; then
     volume=80
     shuffle=1
 
+elif [ "$1" == Sweepy-Poo-Plops ]; then
+
+    curl http://localhost:3888/scene/Kitchen
+
+    player=kitchen
+    playlist=spotify:playlist:6wzqRkQFFhLakk0ovplFpr
+    volume=80
+    shuffle=0
+
 elif [ "$1" == Sweepy-Scrub-Scrub ]; then
 
     player=livingroom

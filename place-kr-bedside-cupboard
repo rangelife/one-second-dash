@@ -1,15 +1,1 @@
-#!/bin/bash
-
-
-# load keys
-. /etc/environment
-
-# tell ifttt
-curl https://maker.ifttt.com/trigger/dash-$1/with/key/$IFTTT_MAKER_KEY
-
-# toggle reminders
-if pgrep henremind; then
-    pkill henremind
-else
-    henremind 10
-fi
+launch-10min-timer.sh
