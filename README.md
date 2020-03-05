@@ -100,10 +100,10 @@ longpress, scan for the MAC address
 | Sweepy Fuzz Scrape | Wilkinson             | side hall  | all lights off    |
 | Sweepy Fuzz Slash  | Wilkinson             | front door | all lights off    |
 | Sweepy Poo Plops   | Andrex                | main hall  | kate kitchen      |
-| Sweepy Dog Breath  | Listerine             |            | ?                 |
+| Sweepy Dog Breath  | Listerine             | rk bed     | ?yank playlist    |
 | Sweepy Bin Juice   | Brabantia             |            | ?                 |
 | Sweepy Puff Jollop | Neutrogena            | liv rm     | ?hen 1 play/day   |
-| Sweepy Babba Plops | Huggies               | rk bed     | ?yank playlist    |
+| Sweepy Babba Plops | Huggies               | kitchen    | yakety sax        |
 | Sweepy Ralph Bowl  | Dettol                | spare rm   | ?yank playlist    |
 | Sweepy Stink Mask  | Air Wick              | liv rm     | ?yank playlist    |
 | Sweepy Gloop Face  | Aveeno                | kitchen    | ?yank playlist    |
