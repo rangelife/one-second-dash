@@ -15,6 +15,13 @@ if [ "$1" == Sweepy-Gripey ]; then
     volume=60
     shuffle=1
 
+elif [ "$1" == Sweepy-Dog-Breath ]; then
+
+    player=spareroom
+    playlist=spotify:user:rangelife2:playlist:0SMpzciQeLySoYwkmhCDHd
+    volume=60
+    shuffle=1
+
 elif [ "$1" == Sweepy-Poo-Poo ]; then
 
     player=spareroom
