@@ -64,12 +64,12 @@ while True:
         print "tcpdump exited"
         break
     if "Probe Request" in line:
-        print line
-    for SSID_TOKEN in SSID_TOKENS:
-        if SSID_TOKEN in line:
-            now = time.time()
-            if now - last_played > DEBOUNCE_INTERVAL:
-                last_played = now
-                sys.stdout.write(line)
-                sys.stdout.flush()
-                do_ring(SSID_TOKEN)
+        for SSID_TOKEN in SSID_TOKENS:
+            if SSID_TOKEN in line:
+                print line
+                now = time.time()
+                if now - last_played > DEBOUNCE_INTERVAL:
+                    last_played = now
+                    sys.stdout.write(line)
+                    sys.stdout.flush()
+                    do_ring(SSID_TOKEN)

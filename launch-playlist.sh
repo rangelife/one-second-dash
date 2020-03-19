@@ -61,6 +61,36 @@ elif [ "$1" == Sweepy-Babba-Plops ]; then
     volume=90
     shuffle=0
 
+elif [ "$1" == Sweepy-Babba-Plops ]; then
+
+    player=kitchen
+    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
+    volume=90
+    shuffle=0
+elif [ "$1" == Sweepy-Babba-Plops ]; then
+
+    player=kitchen
+    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
+    volume=90
+    shuffle=0
+elif [ "$1" == Sweepy-Babba-Plops ]; then
+
+    player=kitchen
+    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
+    volume=90
+    shuffle=0
+elif [ "$1" == Sweepy-Babba-Plops ]; then
+
+    player=kitchen
+    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
+    volume=90
+    shuffle=0
+elif [ "$1" == Sweepy-Babba-Plops ]; then
+
+    player=kitchen
+    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
+    volume=90
+    shuffle=0
 else
     echo "UNRECOGNISED BUTTON"
     exit 1
