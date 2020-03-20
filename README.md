@@ -95,18 +95,18 @@ longpress, scan for the MAC address
 | Sweepy Nom Nom     | Pedigree              | rk bedside | 10 min timer      |
 | Sweepy Poo Poo     | Andrex                | sp bed far | Barry White       |
 | Sweepy Scrub Scrub | Ariel                 | liv rm     | db playlist       |
-| Sweepy Zing Ding   | Finish                |            | Tom playlist                  |
 | Sweepy Puff Buff   | Neutrogena            | kitchen    | rob playlist      |
 | Sweepy Fuzz Scrape | Wilkinson             | side hall  | all lights off    |
 | Sweepy Fuzz Slash  | Wilkinson             | front door | all lights off    |
-| Sweepy Poo Plops   | Andrex                | main hall  | kate kitchen      |
 | Sweepy Dog Breath  | Listerine             | sp bed nr  | nye playlist      |
-| Sweepy Bin Juice   | Brabantia             | rk bed     | Whitney
-| Sweepy Puff Jollop | Neutrogena            | liv rm     | Morrissey
-| Sweepy Babba Plops | Huggies               | kitchen    | 
-| Sweepy Ralph Bowl  | Dettol                | spare rm   | ?yank playlist    |
-| Sweepy Stink Mask  | Air Wick              | liv rm     | ?yank playlist    |
-| Sweepy Gloop Face  | Aveeno                | kitchen    | ?yank playlist    |
+| Sweepy Babba Plops | Huggies               | ?          | Benny Hill        |
+| Sweepy Poo Plops   | Andrex                | ?          | Brett             |
+| Sweepy Zing Ding   | Finish                | sp bed mid | Tom playlist      |
+| Sweepy Bin Juice   | Brabantia             | ?          | Morrissey         |
+| Sweepy Stink Mask  | Air Wick              | ?          | Elton John        |
+| Sweepy Ralph Bowl  | Dettol                | ?          | Dining lights     |
+| Sweepy Gloop Face  | Aveeno                | ?          | ?yank playlist    |
+| Sweepy Puff Jollop | Neutrogena            | ?          | ?                 |
 +--------------------+-----------------------+------------+-------------------+
 
 

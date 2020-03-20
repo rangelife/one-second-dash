@@ -38,15 +38,6 @@ elif [ "$1" == Sweepy-Puff-Buff ]; then
     volume=80
     shuffle=1
 
-elif [ "$1" == Sweepy-Poo-Plops ]; then
-
-    curl http://localhost:3888/scene/Kitchen
-
-    player=kitchen
-    playlist=spotify:playlist:6wzqRkQFFhLakk0ovplFpr
-    volume=80
-    shuffle=0
-
 elif [ "$1" == Sweepy-Scrub-Scrub ]; then
 
     player=livingroom
@@ -54,43 +45,47 @@ elif [ "$1" == Sweepy-Scrub-Scrub ]; then
     volume=80
     shuffle=1
 
-elif [ "$1" == Sweepy-Babba-Plops ]; then
-
-    player=kitchen
-    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
-    volume=90
-    shuffle=0
 
 elif [ "$1" == Sweepy-Babba-Plops ]; then
 
     player=kitchen
+    // yakety sax
     playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
     volume=90
     shuffle=0
-elif [ "$1" == Sweepy-Babba-Plops ]; then
 
-    player=kitchen
-    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
-    volume=90
-    shuffle=0
-elif [ "$1" == Sweepy-Babba-Plops ]; then
+elif [ "$1" == Sweepy-Poo-Plops ]; then
 
-    player=kitchen
-    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
-    volume=90
-    shuffle=0
-elif [ "$1" == Sweepy-Babba-Plops ]; then
+    player=bedroom
+    // brett
+    playlist=spotify:playlist:6wzqRkQFFhLakk0ovplFpr
+    volume=50
+    shuffle=1
 
-    player=kitchen
-    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
-    volume=90
-    shuffle=0
-elif [ "$1" == Sweepy-Babba-Plops ]; then
+elif [ "$1" == Sweepy-Zing-Ding ]; then
 
-    player=kitchen
-    playlist=spotify:playlist:39KfuWIcpWcYz88oltA7Dl
-    volume=90
+    player=bedroom
+    // tom
+    playlist=spotify:playlist:3Ewkbgul1ggLp4dnJQgKPb
+    volume=50
     shuffle=0
+
+elif [ "$1" == Sweepy-Bin-Juice ]; then
+
+    player=bedroom
+    // moz
+    playlist=spotify:playlist:3AYVicQvBNNJFNobscpMMt
+    volume=50
+    shuffle=1
+
+elif [ "$1" == Sweepy-Stink-Mask ]; then
+
+    player=bedroom
+    // elton
+    playlist=spotify:playlist:17nPmGGi4DzUeW8mRLJnpj
+    volume=50
+    shuffle=1
+
 else
     echo "UNRECOGNISED BUTTON"
     exit 1
