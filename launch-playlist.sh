@@ -70,7 +70,7 @@ elif [ "$1" == Sweepy-Zing-Ding ]; then
     volume=50
     shuffle=0
 
-elif [ "$1" == Sweepy-Bin-Juice ]; then
+elif [ "$1" == Sweepy-Puff-Jollop ]; then
 
     player=bedroom
     // moz

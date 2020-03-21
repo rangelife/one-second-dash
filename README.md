@@ -102,11 +102,11 @@ longpress, scan for the MAC address
 | Sweepy Babba Plops | Huggies               | ?          | Benny Hill        |
 | Sweepy Poo Plops   | Andrex                | ?          | Brett             |
 | Sweepy Zing Ding   | Finish                | sp bed mid | Tom playlist      |
-| Sweepy Bin Juice   | Brabantia             | ?          | Morrissey         |
+| Sweepy Puff Jollop | Neutrogena            | ?          | Morrissey         |
 | Sweepy Stink Mask  | Air Wick              | ?          | Elton John        |
 | Sweepy Ralph Bowl  | Dettol                | ?          | Dining lights     |
 | Sweepy Gloop Face  | Aveeno                | ?          | ?yank playlist    |
-| Sweepy Puff Jollop | Neutrogena            | ?          | ?                 |
+| Sweepy Bin Juice   | Brabantia             | ?          | Morrissey         |
 +--------------------+-----------------------+------------+-------------------+
 
 
