@@ -106,7 +106,7 @@ longpress, scan for the MAC address
 | Sweepy Stink Mask  | Air Wick              | ?          | Elton John        |
 | Sweepy Ralph Bowl  | Dettol                | ?          | Dining lights     |
 | Sweepy Gloop Face  | Aveeno                | ?          | ?yank playlist    |
-| Sweepy Bin Juice   | Brabantia             | ?          | Morrissey         |
+| Sweepy Bin Juice   | Brabantia             | ?          | ?                 |
 +--------------------+-----------------------+------------+-------------------+
 
 

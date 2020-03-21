@@ -56,34 +56,34 @@ elif [ "$1" == Sweepy-Babba-Plops ]; then
 
 elif [ "$1" == Sweepy-Poo-Plops ]; then
 
-    player=bedroom
+    player=spareroom
     // brett
     playlist=spotify:playlist:6wzqRkQFFhLakk0ovplFpr
-    volume=50
+    volume=80
     shuffle=1
 
 elif [ "$1" == Sweepy-Zing-Ding ]; then
 
-    player=bedroom
+    player=spareroom
     // tom
     playlist=spotify:playlist:3Ewkbgul1ggLp4dnJQgKPb
-    volume=50
+    volume=80
     shuffle=0
 
 elif [ "$1" == Sweepy-Puff-Jollop ]; then
 
-    player=bedroom
+    player=spareroom
     // moz
     playlist=spotify:playlist:3AYVicQvBNNJFNobscpMMt
-    volume=50
+    volume=80
     shuffle=1
 
 elif [ "$1" == Sweepy-Stink-Mask ]; then
 
-    player=bedroom
+    player=spareroom
     // elton
     playlist=spotify:playlist:17nPmGGi4DzUeW8mRLJnpj
-    volume=50
+    volume=80
     shuffle=1
 
 else
