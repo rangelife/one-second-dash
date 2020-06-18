@@ -45,6 +45,13 @@ elif [ "$1" == Sweepy-Scrub-Scrub ]; then
     volume=80
     shuffle=1
 
+elif [ "$1" == Sweepy-Bin-Juice ]; then
+
+    player=livingroom
+    playlist=spotify:playlist:6OxWunhKTtVscrI7qKjIQX
+    volume=80
+    shuffle=0
+
 
 elif [ "$1" == Sweepy-Babba-Plops ]; then
 
@@ -56,7 +63,7 @@ elif [ "$1" == Sweepy-Babba-Plops ]; then
 
 elif [ "$1" == Sweepy-Poo-Plops ]; then
 
-    player=spareroom
+    player=bedroom
     // brett
     playlist=spotify:playlist:6wzqRkQFFhLakk0ovplFpr
     volume=80
@@ -64,7 +71,7 @@ elif [ "$1" == Sweepy-Poo-Plops ]; then
 
 elif [ "$1" == Sweepy-Zing-Ding ]; then
 
-    player=spareroom
+    player=bedroom
     // tom
     playlist=spotify:playlist:3Ewkbgul1ggLp4dnJQgKPb
     volume=80
@@ -72,7 +79,7 @@ elif [ "$1" == Sweepy-Zing-Ding ]; then
 
 elif [ "$1" == Sweepy-Puff-Jollop ]; then
 
-    player=spareroom
+    player=bedroom
     // moz
     playlist=spotify:playlist:3AYVicQvBNNJFNobscpMMt
     volume=80
@@ -80,9 +87,17 @@ elif [ "$1" == Sweepy-Puff-Jollop ]; then
 
 elif [ "$1" == Sweepy-Stink-Mask ]; then
 
-    player=spareroom
+    player=bedroom
     // elton
     playlist=spotify:playlist:17nPmGGi4DzUeW8mRLJnpj
+    volume=80
+    shuffle=1
+
+elif [ "$1" == Sweepy-Gloop-Face ]; then
+
+    player=bedroom
+    // KM
+    playlist=spotify:playlist:13YSqgYI7jiBA9QFhf4LrJ
     volume=80
     shuffle=1
 
