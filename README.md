@@ -112,7 +112,17 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 | Sweepy VitaCoco    | VitaCoco              |                   |                   | 78E103CF9A21  | 60019520_EU |
 | Sweepy AmbiPur     | AmbiPur               |                   |                   | 18742E503985  | 60019520_EU |
 | Sweepy Febreze     | Febreze               |                   |                   | 78E103C9A280  | 60019520_WS | no worky :-(
-+--------------------+-----------------------+------------+-------------------+---------------+-------------+
+| Sweepy Andrex          | dead- battery?
+| Sweepy Play Doh        | dead- battery?
+| Sweepy Kleenex         | MAC: 8871E55401CF, Firmware: 60019520_EU, Battery: 21
+| Sweepy Listerine       | MAC: 6854FDE4AB15, Firmware: 60019520_EU, Battery: 66
+| Sweepy Simple Solution | MAC: 78E103B1C715, Firmware: 60019520_WS, Battery: 75 no worky :-(
+| Sweepy Nerf            | MAC: AC63BEB3AF75, Firmware: 60019520_WS, Battery: 65 no worky :-(
+| Sweepy Lily Kitchen    | MAC: 78E103528035, Firmware: 60019520_WS, Battery: 70 no worky :-(
+| Sweepy Pampers         | MAC: B47C9CF48BAE, Firmware: 60019520_WS, Battery: 78 no worky :-(
+| Sweepy Right Guard     | MAC: 6837E9A02F5B, Firmware: 60019520_EU, Battery: 80
++------------------------+-----------------------+------------+-------------------+---------------+-------------+
+HUAWEI P smart 2019
 
 
 
