@@ -89,30 +89,30 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 
 
 ## existing dash buttons:
-+--------------------+-----------------------+------------+-------------------+
-| SSID               | Logo                  | Location   | Function          | MAC
-+--------------------+-----------------------+------------+-------------------+
-| Sweepy Gripey      | Gaviscon              | rk bed     | nye playlist      |
-| Sweepy Nom Nom     | Pedigree              | rk bedside | 10 min timer      |
-| Sweepy Poo Poo     | Andrex                | sp bed far | Barry White       |
-| Sweepy Scrub Scrub | Ariel                 | liv rm     | db playlist       | AC63BE8FE729
-| Sweepy Puff Buff   | Neutrogena            | kitchen    | rob playlist      |
-| Sweepy Fuzz Scrape | Wilkinson             | side hall  | all lights off    |
-| Sweepy Fuzz Slash  | Wilkinson             | front door | all lights off    |
-| Sweepy Dog Breath  | Listerine             | sp bed nr  | nye playlist      |
-| Sweepy Babba Plops | Huggies               | ?          | Benny Hill        |
-| Sweepy Poo Plops   | Andrex                | ?          | Brett             |
-| Sweepy Zing Ding   | Finish                | sp bed mid | Tom playlist      | 50F5DA7F0FDC
-| Sweepy Puff Jollop | Neutrogena            | ?          | Morrissey         | 50F5DA81D305?
-| Sweepy Stink Mask  | Air Wick              | ?          | Elton John        |
-| Sweepy Ralph Bowl  | Dettol                | ?          | Dining lights     |
-| Sweepy Gloop Face  | Aveeno                | ?          | KM playlist       |
-| Sweepy Bin Juice   | Brabantia             | liv rm     | applause          |
-| Sweepy Durabunny   | Duracell              |            |                   | B47C9C7C2B73
-| Sweepy VitaCoco    | VitaCoco              |            |                   | 78E103CF9A21
-| Sweepy AmbiPur     | AmbiPur               |            |                   | 18742E503985
-| Sweepy Febreze     | Febreze               |            |                   | 78E103C9A280
-+--------------------+-----------------------+------------+-------------------+
++--------------------+-----------------------+------------+-------------------+---------------+-------------+
+| SSID               | Logo                  | Location   | Function          | MAC           | firmware    |
++--------------------+-----------------------+------------+-------------------+---------------+-------------+
+| Sweepy Gripey      | Gaviscon              | rk bed            | nye playlist      |
+| Sweepy Nom Nom     | Pedigree              | rk bedside        | 10 min timer      |
+| Sweepy Poo Poo     | Andrex                | sp bed far        | Barry White       |
+| Sweepy Scrub Scrub | Ariel                 | LR above TV (top) | db playlist       | AC63BE8FE729  | 30017420_WS |
+| Sweepy Puff Buff   | Neutrogena            | kitchen           | rob playlist      |
+| Sweepy Fuzz Scrape | Wilkinson             | side hall         | all lights off    |
+| Sweepy Fuzz Slash  | Wilkinson             | front door        | all lights off    |
+| Sweepy Dog Breath  | Listerine             | sp bed nr         | nye playlist      |
+| Sweepy Babba Plops | Huggies               | ?                 | Benny Hill        |
+| Sweepy Poo Plops   | Andrex                | ?                 | Brett             |
+| Sweepy Zing Ding   | Finish                | sp bed mid        | Tom playlist      | 50F5DA7F0FDC
+| Sweepy Puff Jollop | Neutrogena            | ?                 | Morrissey         | 50F5DA81D305?
+| Sweepy Stink Mask  | Air Wick              | ?                 | Elton John        |
+| Sweepy Ralph Bowl  | Dettol                | LR dresser top R  | Dining lights     |
+| Sweepy Gloop Face  | Aveeno                | ?                 | KM playlist       |
+| Sweepy Bin Juice   | Brabantia             | LR above TV (top) | applause          |
+| Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU |
+| Sweepy VitaCoco    | VitaCoco              |                   |                   | 78E103CF9A21  | 60019520_EU |
+| Sweepy AmbiPur     | AmbiPur               |                   |                   | 18742E503985  | 60019520_EU |
+| Sweepy Febreze     | Febreze               |                   |                   | 78E103C9A280  | 60019520_WS | no worky :-(
++--------------------+-----------------------+------------+-------------------+---------------+-------------+
 
 
 
