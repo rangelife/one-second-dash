@@ -36,6 +36,7 @@ def wait_for_device():
 
 def configure_wifi(ssid, password):
     ssid = urllib.quote(ssid)
+    password = urllib.quote(password)
     print("* Configure Dash button to connect to \"%s\"" % ssid)
     # is the ssid in range ?
     r = h.get(BASE_URL, headers={'Content-Type': 'application/json'}, timeout=5)

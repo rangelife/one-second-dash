@@ -11,27 +11,66 @@ do "Raspberry Pi Setup" below
 grab Sweepy Outpost (black) router
 plug LAN from laptop into lan (not upstream) port 1-4; set up LAN port as 192.168.1.0/24 static
 
-go into config (http://192.168.2.254, admin/password)
+go into config (http://192.168.0.249, admin/password)
 change BOTH Wifi Names to Sweepy New Name (allocate from table below), ensure channel 1, save, apply
 go to Wifi Security, unmask password and remember its password
 
 unplug wired conn to laptop.
 
 plug lan (not upstream) into main internet connected router
-reconnect from laptop via wifi. make sure it can reach through to internet [NEEDED!]
+reconnect from laptop to new SSID via wifi. make sure it can reach through to internet [NEEDED!]
 
 press button til blue flashy light on dash button.
 connect to Amazon ConfigureMe wifi.
 
-then run ./setup-dashbutton.py 'Sweepy New Name' 'WhateverThePasswordWas'
+then run ./setup-dashbutton.py 'Sweepy New Name' 'Whatever The Password Was'
 
 (NOTE DOWN THE MAC ADDRESS of the dash button spat out here)
 
-disconnect laptop wifi, reconnect cable, hit http://192.168.2.254 again.
+disconnect laptop wifi, reconnect cable, hit http://192.168.0.249 again.
 change BOTH Wifi Names back to Sweepy Outpost, save, apply
 
 
 in this repo, add a line to dash_ssids for the new network name
+
+
+on pi,
+sudo service one-second-dash stop
+sudo ./doorbell.py
+
+press dash button. check it's firing. if not:
+
+
+
+next try:
+
+Put Dash Button in setup mode by holding down the button until the LED flashes blue.
+Connect to the Amazon ConfigureMe WiFi network and visit http://192.168.0.1.
+You’ll see the button’s hardware (MAC) address. Block its Internet access in your router’s settings. If you don’t do this, the button will get an over-the-air update when it phones home and get bricked.
+While in setup mode, play this .wav file [afplay write_customer_secret.s.wav] through some earbuds aimed at the Dash Button.
+If the LED turns green, the exploit worked! Carry on to step (3).
+If the LED turns off, you’re possibly on a firmware version that fixed the vulnerability. Unfortunately, you’re out of luck if this is the case. (unless someone finds another vulnerability)
+Put the Button in setup mode again.
+Connect to the WiFi network it creates — Amazon ConfigureMe.
+Visit this URL*: http://192.168.0.1/?amzn_ssid=<wifi_network_name>&amzn_pw=<wifi_network_pw>. (obviously substituting wifi_network_name and wifi_network_pw for the desired values)
+
+[from https://blog.christophermullins.com/2019/12/20/rescue-your-amazon-dash-buttons/]
+
+as last resort, try:
+
+longpress, scan for the MAC address
+
+    sudo iwlist wlan0 scanning essid 'Amazon ConfigureMe'
+
+.. need to ensure "Last beacon" is <1sec
+
+.. and would have to implement something that scans to look for those MACs (see MACs in below table)
+
+(I actually fixed these ones with the buffer overrun hack wav)
+
+
+
+....... once dash signals established:
 
 and add a script based on one of the others
 
@@ -47,65 +86,32 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 
 
 
-next try:
-
-Put Dash Button in setup mode by holding down the button until the LED flashes blue.
-Connect to the Amazon ConfigureMe WiFi network and visit http://192.168.0.1.
-You’ll see the button’s hardware (MAC) address. Block its Internet access in your router’s settings. If you don’t do this, the button will get an over-the-air update when it phones home and get bricked.
-While in setup mode, play this .wav file [RJLH: write_customer_secret.s.wav in this folder] through some earbuds aimed at the Dash Button.
-If the LED turns green, the exploit worked! Carry on to step (3).
-If the LED turns off, you’re probably on a firmware version that fixed the vulnerability. Unfortunately, you’re out of luck if this is the case. (unless someone finds another vulnerability)
-Put the Button in setup mode again.
-Connect to the WiFi network it creates — Amazon ConfigureMe.
-Visit this URL*: http://192.168.0.1/?amzn_ssid=<wifi_network_name>&amzn_pw=<wifi_network_pw>. (obviously substituting wifi_network_name and wifi_network_pw for the desired values)
-
-[from https://blog.christophermullins.com/2019/12/20/rescue-your-amazon-dash-buttons/]
-
-as last resort, try:
-
-longpress, scan for the MAC address
-
-    sudo iwlist wlan0 scanning essid 'Amazon ConfigureMe'
-
-.. need to ensure "Last beacon" is <1sec
-
-.. and would have to implement something that scans to look for those MACs:
-
-+--------------+-----------------------+---------------+
-| MAC          | Logo                  | Function      |
-+--------------+-----------------------+---------------+
-| AC63BE8FE729 | Ariel                 |               |
-| 50F5DA7F0FDC | Finish                |               |
-| 50F5DA81D305 | Neutrogena            |               |
-+--------------+-----------------------+---------------+
-
-(I actually fixed these ones with the buffer overrun hack wav)
 
 
 ## existing dash buttons:
 +--------------------+-----------------------+------------+-------------------+
-| SSID               | Logo                  | Location   | Function          |
+| SSID               | Logo                  | Location   | Function          | MAC
 +--------------------+-----------------------+------------+-------------------+
 | Sweepy Gripey      | Gaviscon              | rk bed     | nye playlist      |
 | Sweepy Nom Nom     | Pedigree              | rk bedside | 10 min timer      |
 | Sweepy Poo Poo     | Andrex                | sp bed far | Barry White       |
-| Sweepy Scrub Scrub | Ariel                 | liv rm     | db playlist       |
+| Sweepy Scrub Scrub | Ariel                 | liv rm     | db playlist       | AC63BE8FE729
 | Sweepy Puff Buff   | Neutrogena            | kitchen    | rob playlist      |
 | Sweepy Fuzz Scrape | Wilkinson             | side hall  | all lights off    |
 | Sweepy Fuzz Slash  | Wilkinson             | front door | all lights off    |
 | Sweepy Dog Breath  | Listerine             | sp bed nr  | nye playlist      |
 | Sweepy Babba Plops | Huggies               | ?          | Benny Hill        |
 | Sweepy Poo Plops   | Andrex                | ?          | Brett             |
-| Sweepy Zing Ding   | Finish                | sp bed mid | Tom playlist      |
-| Sweepy Puff Jollop | Neutrogena            | ?          | Morrissey         |
+| Sweepy Zing Ding   | Finish                | sp bed mid | Tom playlist      | 50F5DA7F0FDC
+| Sweepy Puff Jollop | Neutrogena            | ?          | Morrissey         | 50F5DA81D305?
 | Sweepy Stink Mask  | Air Wick              | ?          | Elton John        |
 | Sweepy Ralph Bowl  | Dettol                | ?          | Dining lights     |
 | Sweepy Gloop Face  | Aveeno                | ?          | KM playlist       |
 | Sweepy Bin Juice   | Brabantia             | liv rm     | applause          |
-| Sweepy Durabunny   | Duracell              |            |                   |
-| Sweepy VitaCoco    | VitaCoco              |            |                   |
-| Sweepy AmbiPur     | AmbiPur               |            |                   |
-| Sweepy Febreze     | Febreze               |            |                   |
+| Sweepy Durabunny   | Duracell              |            |                   | B47C9C7C2B73
+| Sweepy VitaCoco    | VitaCoco              |            |                   | 78E103CF9A21
+| Sweepy AmbiPur     | AmbiPur               |            |                   | 18742E503985
+| Sweepy Febreze     | Febreze               |            |                   | 78E103C9A280
 +--------------------+-----------------------+------------+-------------------+
 
 

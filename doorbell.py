@@ -56,7 +56,7 @@ def do_ring(ssid):
 cmd = 'tcpdump -l -K -q -i DoorbellMonitor -n -s 256'
 proc = subprocess.Popen(cmd.split(), close_fds=True,
                         bufsize=0, stdout=subprocess.PIPE)
-last_played = 0
+last_played = {}
 
 while True:
     line = proc.stdout.readline()
@@ -64,12 +64,13 @@ while True:
         print "tcpdump exited"
         break
     if "Probe Request" in line:
+        print line
         for SSID_TOKEN in SSID_TOKENS:
             if SSID_TOKEN in line:
                 print line
                 now = time.time()
-                if now - last_played > DEBOUNCE_INTERVAL:
-                    last_played = now
+                if not SSID_TOKEN in last_played or now - last_played[SSID_TOKEN] > DEBOUNCE_INTERVAL:
+                    last_played[SSID_TOKEN] = now
                     sys.stdout.write(line)
                     sys.stdout.flush()
                     do_ring(SSID_TOKEN)
