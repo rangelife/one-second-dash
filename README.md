@@ -8,24 +8,16 @@ do "Raspberry Pi Setup" below
 
 ## to add a new dash button:
 
-plug in AD Yellow router
+grab Sweepy Outpost (black) router
+plug LAN from laptop into lan (not upstream) port 1-4; set up LAN port as 192.168.1.0/24 static
 
-either
-{
-    see if laptop can connect to "Sweepy Nothing"
-}
-.. OR ..
-{
-    plug LAN from laptop into port 1-4; set up LAN port as 192.168.1.0/24 static
-}
-
-go into config (http://192.168.1.252, admin/usual)
-change BOTH Wifi Names to Sweepy New Name, ensure channel 1, save, apply
+go into config (http://192.168.2.254, admin/password)
+change BOTH Wifi Names to Sweepy New Name (allocate from table below), ensure channel 1, save, apply
 go to Wifi Security, unmask password and remember its password
 
-unplug.
+unplug wired conn to laptop.
 
-plug upstream port into main internet connected router
+plug lan (not upstream) into main internet connected router
 reconnect from laptop via wifi. make sure it can reach through to internet [NEEDED!]
 
 press button til blue flashy light on dash button.
@@ -35,7 +27,8 @@ then run ./setup-dashbutton.py 'Sweepy New Name' 'WhateverThePasswordWas'
 
 (NOTE DOWN THE MAC ADDRESS of the dash button spat out here)
 
-change BOTH Wifi Names back to Sweepy Nothing, save, apply
+disconnect laptop wifi, reconnect cable, hit http://192.168.2.254 again.
+change BOTH Wifi Names back to Sweepy Outpost, save, apply
 
 
 in this repo, add a line to dash_ssids for the new network name
@@ -51,6 +44,8 @@ re run the monitor script ./start.sh
 check it's firing.
 
 if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn't work.
+
+
 
 next try:
 
@@ -107,6 +102,10 @@ longpress, scan for the MAC address
 | Sweepy Ralph Bowl  | Dettol                | ?          | Dining lights     |
 | Sweepy Gloop Face  | Aveeno                | ?          | KM playlist       |
 | Sweepy Bin Juice   | Brabantia             | liv rm     | applause          |
+| Sweepy Durabunny   | Duracell              |            |                   |
+| Sweepy VitaCoco    | VitaCoco              |            |                   |
+| Sweepy AmbiPur     | AmbiPur               |            |                   |
+| Sweepy Febreze     | Febreze               |            |                   |
 +--------------------+-----------------------+------------+-------------------+
 
 
