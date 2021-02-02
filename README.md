@@ -109,7 +109,7 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 | Sweepy Gloop Face  | Aveeno                | ?                 | KM playlist       |
 | Sweepy Bin Juice   | Brabantia             | LR above TV (top) | applause          |
 | Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU |
-| Sweepy VitaCoco    | VitaCoco              |                   |                   | 78E103CF9A21  | 60019520_EU |
+| Sweepy VitaCoco    | VitaCoco              | Attic or wherever | Slack me for tea | 78E103CF9A21  | 60019520_EU |
 | Sweepy AmbiPur     | AmbiPur               |                   |                   | 18742E503985  | 60019520_EU |
 | Sweepy Febreze     | Febreze               |                   |                   | 78E103C9A280  | 60019520_WS | no worky :-(
 | Sweepy Andrex          | dead- battery?
