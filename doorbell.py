@@ -64,7 +64,6 @@ while True:
         print "tcpdump exited"
         break
     if "Probe Request" in line:
-        print line
         for SSID_TOKEN in SSID_TOKENS:
             if SSID_TOKEN in line:
                 print line

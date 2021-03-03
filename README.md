@@ -94,6 +94,7 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 +--------------------+-----------------------+------------+-------------------+---------------+-------------+
 | Sweepy Gripey      | Gaviscon              | rk bed            | nye playlist      |
 | Sweepy Nom Nom     | Pedigree              | rk bedside        | 10 min timer      |
+| Sweepy Listerine   | Listerine             | rk bedside        | 10 min timer      | MAC: 6854FDE4AB15, Firmware: 60019520_EU, Battery: 66
 | Sweepy Poo Poo     | Andrex                | sp bed far        | Barry White       |
 | Sweepy Scrub Scrub | Ariel                 | LR above TV (top) | db playlist       | AC63BE8FE729  | 30017420_WS |
 | Sweepy Puff Buff   | Neutrogena            | kitchen           | rob playlist      |
@@ -115,7 +116,6 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 | Sweepy Andrex          | dead- battery?
 | Sweepy Play Doh        | dead- battery?
 | Sweepy Kleenex         | MAC: 8871E55401CF, Firmware: 60019520_EU, Battery: 21
-| Sweepy Listerine       | MAC: 6854FDE4AB15, Firmware: 60019520_EU, Battery: 66
 | Sweepy Simple Solution | MAC: 78E103B1C715, Firmware: 60019520_WS, Battery: 75 no worky :-(
 | Sweepy Nerf            | MAC: AC63BEB3AF75, Firmware: 60019520_WS, Battery: 65 no worky :-(
 | Sweepy Lily Kitchen    | MAC: 78E103528035, Firmware: 60019520_WS, Battery: 70 no worky :-(
