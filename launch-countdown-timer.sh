@@ -11,5 +11,5 @@
 if pgrep henremind; then
     pkill henremind
 else
-    henremind 20
+    henremind
 fi
