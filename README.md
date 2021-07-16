@@ -94,7 +94,7 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 +--------------------+-----------------------+------------+-------------------+---------------+-------------+
 | Sweepy Gripey      | Gaviscon              | rk bed            | nye playlist      |
 | Sweepy Nom Nom     | Pedigree              | rk bedside        | 10 min timer      |
-| Sweepy Listerine   | Listerine             | rk bedside        | 10 min timer      | MAC: 6854FDE4AB15, Firmware: 60019520_EU, Battery: 66
+| Sweepy Listerine   | Listerine             | kitchen           | 10 min timer      | MAC: 6854FDE4AB15, Firmware: 60019520_EU, Battery: 66
 | Sweepy Poo Poo     | Andrex                | sp bed far        | Barry White       |
 | Sweepy Scrub Scrub | Ariel                 | LR above TV (top) | db playlist       | AC63BE8FE729  | 30017420_WS |
 | Sweepy Puff Buff   | Neutrogena            | kitchen           | rob playlist      |
@@ -111,7 +111,7 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 | Sweepy Bin Juice   | Brabantia             | LR above TV (top) | applause          |
 | Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU |
 | Sweepy VitaCoco    | VitaCoco              | Attic or wherever | Slack me for tea | 78E103CF9A21  | 60019520_EU |
-| Sweepy AmbiPur     | AmbiPur               |                   |                   | 18742E503985  | 60019520_EU |
+| Sweepy AmbiPur     | AmbiPur               | kitchen           | HYCYBH            | 18742E503985  | 60019520_EU |
 | Sweepy Febreze     | Febreze               |                   |                   | 78E103C9A280  | 60019520_WS | no worky :-(
 | Sweepy Andrex          | dead- battery?
 | Sweepy Play Doh        | dead- battery?
