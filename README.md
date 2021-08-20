@@ -92,35 +92,37 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 +--------------------+-----------------------+------------+-------------------+---------------+-------------+
 | SSID               | Logo                  | Location   | Function          | MAC           | firmware    |
 +--------------------+-----------------------+------------+-------------------+---------------+-------------+
-| Sweepy Gripey      | Gaviscon              | rk bed            | nye playlist      |
+| Sweepy Gripey      | Gaviscon              | rk bed R top      | nye playlist      |
 | Sweepy Nom Nom     | Pedigree              | rk bedside        | 10 min timer      |
 | Sweepy Listerine   | Listerine             | kitchen           | 10 min timer      | MAC: 6854FDE4AB15, Firmware: 60019520_EU, Battery: 66
 | Sweepy Poo Poo     | Andrex                | sp bed far        | Barry White       |
-| Sweepy Scrub Scrub | Ariel                 | LR above TV (top) | db playlist       | AC63BE8FE729  | 30017420_WS |
+| Sweepy Scrub Scrub | Ariel                 | LR above TV (mid) | db playlist       | AC63BE8FE729  | 30017420_WS |
 | Sweepy Puff Buff   | Neutrogena            | kitchen           | rob playlist      |
 | Sweepy Fuzz Scrape | Wilkinson             | side hall         | all lights off    |
 | Sweepy Fuzz Slash  | Wilkinson             | front door        | all lights off    |
 | Sweepy Dog Breath  | Listerine             | sp bed nr         | nye playlist      |
-| Sweepy Babba Plops | Huggies               | ?                 | Benny Hill        |
+| Sweepy Babba Plops | Huggies               | above K door      | Benny Hill        |
 | Sweepy Poo Plops   | Andrex                | ?                 | Brett             |
 | Sweepy Zing Ding   | Finish                | sp bed mid        | Tom playlist      | 50F5DA7F0FDC
 | Sweepy Puff Jollop | Neutrogena            | ?                 | Morrissey         | 50F5DA81D305?
 | Sweepy Stink Mask  | Air Wick              | ?                 | Elton John        |
 | Sweepy Ralph Bowl  | Dettol                | LR dresser top R  | Dining lights     |
-| Sweepy Gloop Face  | Aveeno                | ?                 | KM playlist       |
+| Sweepy Gloop Face  | Aveeno                | rk bed R bot      | KM playlist       |
 | Sweepy Bin Juice   | Brabantia             | LR above TV (top) | applause          |
 | Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU |
 | Sweepy VitaCoco    | VitaCoco              | Attic or wherever | Slack me for tea | 78E103CF9A21  | 60019520_EU |
-| Sweepy AmbiPur     | AmbiPur               | kitchen           | HYCYBH            | 18742E503985  | 60019520_EU |
-| Sweepy Febreze     | Febreze               |                   |                   | 78E103C9A280  | 60019520_WS | no worky :-(
+| Sweepy AmbiPur     | AmbiPur               | above K door      | HYCYBH            | 18742E503985  | 60019520_EU |
+| Sweepy Right Guard     | Right Guard       | rk bed middle     | rk lights off     | MAC: 6837E9A02F5B, Firmware: 60019520_EU, Battery: 80
+| Sweepy Kleenex         | MAC: 8871E55401CF, Firmware: 60019520_EU, Battery: 21
+| | | | | | |
 | Sweepy Andrex          | dead- battery?
 | Sweepy Play Doh        | dead- battery?
-| Sweepy Kleenex         | MAC: 8871E55401CF, Firmware: 60019520_EU, Battery: 21
+| | | | | | |
 | Sweepy Simple Solution | MAC: 78E103B1C715, Firmware: 60019520_WS, Battery: 75 no worky :-(
 | Sweepy Nerf            | MAC: AC63BEB3AF75, Firmware: 60019520_WS, Battery: 65 no worky :-(
 | Sweepy Lily Kitchen    | MAC: 78E103528035, Firmware: 60019520_WS, Battery: 70 no worky :-(
 | Sweepy Pampers         | MAC: B47C9CF48BAE, Firmware: 60019520_WS, Battery: 78 no worky :-(
-| Sweepy Right Guard     | MAC: 6837E9A02F5B, Firmware: 60019520_EU, Battery: 80
+| Sweepy Febreze     | Febreze               |                   |                   | 78E103C9A280  | 60019520_WS | no worky :-(
 +------------------------+-----------------------+------------+-------------------+---------------+-------------+
 HUAWEI P smart 2019
 
