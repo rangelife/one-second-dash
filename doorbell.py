@@ -37,6 +37,7 @@ for SSID_TOKEN_PRINT in SSID_TOKENS:
 DEVNULL = open(os.devnull, 'wb')
 def do_ring(ssid):
     print "Doing ring for "+ssid
+#    return
     # """ Launch the handler.. Don't wait for it to finish. """
     cmd = 'bash ./ring-'+ssid.replace(' ','-')+" "+ssid.replace(' ','-')
     soundproc = subprocess.Popen(cmd.split(), close_fds=True,
@@ -64,6 +65,7 @@ while True:
         print "tcpdump exited"
         break
     if "Probe Request" in line:
+#        print line
         for SSID_TOKEN in SSID_TOKENS:
             if SSID_TOKEN in line:
                 print line
