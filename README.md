@@ -5,6 +5,9 @@ SEE ALSO JOURNAL.txt (above above this)
 ## to install this whole thing:
 do "Raspberry Pi Setup" below
 
+## battery change:
+
+
 ## to add a new dash button:
 
 edit this file on home laptop. and use for below.
@@ -27,9 +30,10 @@ reconnect from laptop to new SSID via wifi. make sure it can reach through to in
 
 press button til blue flashy light on dash button.
 connect to Amazon ConfigureMe wifi
+check MAC, batt etc at http://192.168.0.1
+
 
 then run ./setup-dashbutton.py 'Sweepy New Name' 'Whatever The Password Was'
-e.g.
 
 (NOTE DOWN THE MAC ADDRESS of the dash button spat out here)
 
@@ -44,7 +48,9 @@ in this repo, add a line to dash_ssids for the new SSID name
 sudo service one-second-dash stop
 sudo ./doorbell.py
 
-press dash button. check it's firing. if not:
+press dash button. check it's firing. ctrl-c.
+
+if it wasn't firing (and maybe emitted red light) try these older techniques....:
 
 
 
@@ -88,11 +94,17 @@ and add details to the below table
 
 and save and push to github, pull down to pi
 
-re run the monitor script ./start.sh
+run script manually, ./ring-* check it's working.
 
-check it's firing.
 
-if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn't work.
+re run the service
+
+sudo service one-second-dash start
+
+press button, check it's firing with:
+
+tail -f /var/log/one-second-dash*
+
 
 
 
@@ -108,12 +120,12 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 | Sweepy Gloop Face  | Aveeno                | rk bed R bot      | bed playlist       |  |  |  |  2022-12-18 OK
 | Sweepy Right Guard | Right Guard           | rk bed middle     | rk lights off     | 6837E9A02F5B |  60019520_EU | 80 | 2022-12-18 OK
 | Sweepy Nom Nom     | Pedigree              | rk bedside      | 10 min timer      |  |  |  Flat? CHECK | 2022-12-18 OK
-batt#| Sweepy Fuzz Slash  | Wilkinson             | front door        | all lights & TV off    |  |  |  | 2021-02-03 button OK
+| Sweepy Fuzz 2 Slash  | Wilkinson             | front door        | all lights & TV off    | AC63BE053798 | 30017420_EU | 60 | 2021-02-03 button OK
 | Sweepy Bin Juice   | Brabantia             | LR above TV (top) | applause          |  |  |  | 2022-12-18 OK
 | Sweepy Scrub Scrub | Ariel                 | LR above TV (mid) | db playlist       | AC63BE8FE729  | 30017420_WS |  | 2022-12-18 OK
 batt#| Sweepy Ralph Bowl  | Dettol                | LR dresser top R  | TV off & Dining lights   | | | | 2021-02-03 button OK
 | Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU | | 2022-12-18 OK
-red!#| Sweepy 2 Puff Buff   | Neutrogena            | kitchen above hall door          | rob playlist      | 50F5DA81D305 | 30017420_WS | 100 2022-12-18 | 2022-12-18 OK
+| Sweepy 2 Puff Buff   | Neutrogena            | kitchen above hall door          | rob playlist      | 50F5DA81D305 | 30017420_WS | 100 2022-12-18 | 2022-12-18 OK
 | Sweepy Babba Plops | Huggies               | hall above kit door R     | Benny Hill        |  |  |  | 2022-12-18 OK
 | Sweepy Dog Breath  | Listerine             | sp bed nr         | nye playlist      |  |  |  | 2022-12-18 OK
 reassign. button ok action not#| Sweepy Zing Ding   | Finish                | sp bed mid     | Tom playlist      | 50F5DA7F0FDC |   |  | 2021-02-03 button OK

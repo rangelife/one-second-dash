@@ -36,6 +36,10 @@ for SSID_TOKEN_PRINT in SSID_TOKENS:
     
 DEVNULL = open(os.devnull, 'wb')
 def do_ring(ssid):
+    if os.environ.get("NO_LAUNCH"):
+        print "Skipping execute since NO_LAUNCH set"
+        return
+
     print "Doing ring for "+ssid
 #    return
     # """ Launch the handler.. Don't wait for it to finish. """
