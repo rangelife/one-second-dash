@@ -29,7 +29,7 @@ elif [ "$1" == Sweepy-Poo-Poo ]; then
     volume=80
     shuffle=0
 
-elif [ "$1" == Sweepy-Puff-Buff ]; then
+elif [ "$1" == Sweepy-Puff-2-Buff ]; then
 
     curl http://localhost:3888/scene/Kitchen
 
