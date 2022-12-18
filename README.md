@@ -8,10 +8,15 @@ do "Raspberry Pi Setup" below
 
 ## to add a new dash button:
 
-grab Sweepy Outpost (black) router
-plug LAN from laptop into lan (not upstream) port 1-4; set up LAN port as 192.168.1.0/24 static
+edit this stuff on pi, via work laptop.
+also identify utility laptop, use that for the below
 
-go into config (http://192.168.0.249, admin/password)
+
+grab AD Orange (Linksys E3000) router
+don't plug in WAN
+plug LAN from utility laptop into lan (not upstream) port 1-4; set ethernet static 192.168.1.99
+
+go into config (http://192.168.1.251, admin/password)
 change BOTH Wifi Names to Sweepy New Name (allocate from table below), ensure channel 1, save, apply
 go to Wifi Security, unmask password and remember its password
 
@@ -92,36 +97,40 @@ if it doesn't, maybe the button wasn't registered so the setup-dashbutton doesn'
 
 | SSID               | Logo                  | Location   | Function          | MAC           | firmware    | battery  | status
 |--------------------|-----------------------|------------|-------------------|---------------|-------------|----------|---|
-| Sweepy VitaCoco    | VitaCoco              | attic desk | Slack me for tea | 78E103CF9A21  | 60019520_EU | | 2021-02-03 button OK
-| Sweepy Gripey      | Gaviscon              | rk bed R top       | nye playlist      |  |  |  | 2021-02-03 OK
-| Sweepy Gloop Face  | Aveeno                | rk bed R bot      | KM playlist       |  |  |  |  2021-02-03 button OK
-| Sweepy Listerine   | Listerine             | rk bed R in a bit         | 10 min timer      | 6854FDE4AB15 | 60019520_EU | 66 | 2021-02-03 OK
-| Sweepy Right Guard | Right Guard           | rk bed middle     | rk lights off     | 6837E9A02F5B |  60019520_EU | 80 | 2021-02-03 button OK
-| Sweepy Fuzz Slash  | Wilkinson             | front door        | all lights & TV off    |  |  |  | 2021-02-03 button OK
-| Sweepy Bin Juice   | Brabantia             | LR above TV (top) | applause          |  |  |  | 2021-02-03 button OK
-| Sweepy Scrub Scrub | Ariel                 | LR above TV (mid) | db playlist       | AC63BE8FE729  | 30017420_WS |  | 2021-02-03 button OK
-| Sweepy Ralph Bowl  | Dettol                | LR dresser top R  | TV off & Dining lights   | | | | 2021-02-03 button OK
-| Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU | | 2021-02-03 button OK
-| Sweepy Nom Nom     | Pedigree              | kit above LR door      | 10 min timer      |  |  |  Flat? CHECK | 2021-02-03 had to press twice
-| Sweepy Puff Buff   | Neutrogena            | kitchen above hall door          | rob playlist      |  |  | Flat? CHECK | 2012-02-03 fail
-| Sweepy Babba Plops | Huggies               | hall above kit door R     | Benny Hill        |  |  |  | 2021-02-03 button OK
-| Sweepy AmbiPur     | AmbiPur               | hall above kit door      | HYCYBH            | 18742E503985  | 60019520_EU | | 2021-02-03 button OK
-| Sweepy Dog Breath  | Listerine             | sp bed nr         | nye playlist      |  |  |  | 2021-02-03 button OK
-| Sweepy Zing Ding   | Finish                | sp bed mid     | Tom playlist      | 50F5DA7F0FDC |   |  | 2021-02-03 button OK
-| Sweepy Poo Poo     | Andrex                | sp bed far        | Barry White       |  |  | Flat? CHECK | 2012-02-03 fail
-| Sweepy Fuzz Scrape | Wilkinson             | side hall         | all lights & TV off    |  |  | Flat? CHECK | 2021-02-03 had to press twice
-| Sweepy Kleenex         | Kleenex | - | - | 8871E55401CF | 60019520_EU | 21
+| Sweepy AmbiPur     | AmbiPur               | hc bed top corner     | HC lights            | 18742E503985  | 60019520_EU | | 2022-12-18 OK
+| Sweepy VitaCoco    | VitaCoco              | rk bed K top    | Slack me for tea | 78E103CF9A21  | 60019520_EU | | 2022-12-18 OK
+| Sweepy Gripey      | Gaviscon              | rk bed R top    | nye playlist      |  |  |  | 2022-12-18 OK
+| Sweepy Gloop Face  | Aveeno                | rk bed R bot      | bed playlist       |  |  |  |  2022-12-18 OK
+| Sweepy Right Guard | Right Guard           | rk bed middle     | rk lights off     | 6837E9A02F5B |  60019520_EU | 80 | 2022-12-18 OK
+| Sweepy Nom Nom     | Pedigree              | rk bedside      | 10 min timer      |  |  |  Flat? CHECK | 2022-12-18 OK
+batt#| Sweepy Fuzz Slash  | Wilkinson             | front door        | all lights & TV off    |  |  |  | 2021-02-03 button OK
+| Sweepy Bin Juice   | Brabantia             | LR above TV (top) | applause          |  |  |  | 2022-12-18 OK
+| Sweepy Scrub Scrub | Ariel                 | LR above TV (mid) | db playlist       | AC63BE8FE729  | 30017420_WS |  | 2022-12-18 OK
+batt#| Sweepy Ralph Bowl  | Dettol                | LR dresser top R  | TV off & Dining lights   | | | | 2021-02-03 button OK
+| Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU | | 2022-12-18 OK
+red!#| Sweepy Puff Buff   | Neutrogena            | kitchen above hall door          | rob playlist      |  |  | Flat? CHECK | 2012-02-03 fail
+| Sweepy Babba Plops | Huggies               | hall above kit door R     | Benny Hill        |  |  |  | 2022-12-18 OK
+| Sweepy Dog Breath  | Listerine             | sp bed nr         | nye playlist      |  |  |  | 2022-12-18 OK
+reassign. button ok action not#| Sweepy Zing Ding   | Finish                | sp bed mid     | Tom playlist      | 50F5DA7F0FDC |   |  | 2021-02-03 button OK
+| Sweepy Poo Poo     | Andrex                | sp bed far        | Barry White       |  |  | Flat? CHECK | 2022-12-18 OK
+| Sweepy Fuzz Scrape | Wilkinson             | side hall         | all lights & TV off    |  |  | Flat? CHECK | 2022-12-18 OK
+
+| Sweepy Kleenex         | Kleenex | LOST | - | 8871E55401CF | 60019520_EU | 21
 | Sweepy Poo Plops   | Andrex                | LOST?               | Brett             |
 | Sweepy Puff Jollop | Neutrogena            | LOST?                 | Morrissey         | 50F5DA81D305?
 | Sweepy Stink Mask  | Air Wick              | LOST?                 | Elton John        |
-|                    | Fairy | | | | | | free to set up
-| Sweepy Andrex          |Andrex | | | | | | dead- battery?
-| Sweepy Play Doh        |Play Doh  | | | | | | dead- battery?
-| Sweepy Simple Solution |Simple Solution | | | 78E103B1C715 | 60019520_WS | 75 |   no worky :-(
-| Sweepy Nerf            |Nerf | | | AC63BEB3AF75 | 60019520_WS | 65 |   no worky :-(
-| Sweepy Lily Kitchen    |Lily Kitchen | | | 78E103528035 | 60019520_WS | 70 |   no worky :-(
-| Sweepy Pampers         |Pampers | | | B47C9CF48BAE | 60019520_WS | 78 | no worky :-(
-| Sweepy Febreze | Febreze | | | 78E103C9A280  | 60019520_WS | | no worky :-(
+
+batt#| Sweepy Listerine   | Listerine             | SPARE        |  | 6854FDE4AB15 | 60019520_EU | 66 | 2022-12-18 NEEDS BATT CHG
+
+#| Sweepy Fairy                   | Fairy | | | | | | free to set up
+batt#| Sweepy Andrex          |Andrex | | | | | | dead- battery?
+batt#| Sweepy Play Doh        |Play Doh  | | | | | | dead- battery?
+
+#| Sweepy Simple Solution |Simple Solution | | | 78E103B1C715 | 60019520_WS | 75 |   no worky :-(
+#| Sweepy Nerf            |Nerf | | | AC63BEB3AF75 | 60019520_WS | 65 |   no worky :-(
+#| Sweepy Lily Kitchen    |Lily Kitchen | | | 78E103528035 | 60019520_WS | 70 |   no worky :-(
+#| Sweepy Pampers         |Pampers | | | B47C9CF48BAE | 60019520_WS | 78 | no worky :-(
+#| Sweepy Febreze | Febreze | | | 78E103C9A280  | 60019520_WS | | no worky :-(
 
 
 

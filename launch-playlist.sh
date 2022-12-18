@@ -96,8 +96,10 @@ elif [ "$1" == Sweepy-Stink-Mask ]; then
 elif [ "$1" == Sweepy-Gloop-Face ]; then
 
     player=bedroom
-    // cherrys chunes to cheer
-    playlist=spotify:playlist:13YSqgYI7jiBA9QFhf4LrJ
+#    // cherrys chunes to cheer
+#    playlist=spotify:playlist:13YSqgYI7jiBA9QFhf4LrJ
+    // swords
+    playlist=spotify:playlist:3Rx9dXcUnfXINAwxFKnUAr
     volume=80
     shuffle=1
 
