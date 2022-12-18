@@ -70,8 +70,10 @@ while True:
         break
     if "Probe Request" in line:
 #        print line
+        found_known = False
         for SSID_TOKEN in SSID_TOKENS:
             if SSID_TOKEN in line:
+                found_known = True
                 print line
                 now = time.time()
                 if not SSID_TOKEN in last_played or now - last_played[SSID_TOKEN] > DEBOUNCE_INTERVAL:
@@ -79,3 +81,8 @@ while True:
                     sys.stdout.write(line)
                     sys.stdout.flush()
                     do_ring(SSID_TOKEN)
+                break
+        if not found_known:
+            if 'Sweepy' in line:
+                print "not in dash_ssids: " + line
+

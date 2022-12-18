@@ -71,7 +71,7 @@ elif [ "$1" == Sweepy-Poo-Plops ]; then
 
 elif [ "$1" == Sweepy-Zing-Ding ]; then
 
-    player=bedroom
+    player=kitchen
     // tom
     playlist=spotify:playlist:3Ewkbgul1ggLp4dnJQgKPb
     volume=80
