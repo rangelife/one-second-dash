@@ -1,14 +1,13 @@
-# ROB:
+# One Second Dash rangelife edit
 
-SEE ALSO JOURNAL.txt (above above this)
+SEE ALSO JOURNAL.txt (above above this in dropbox)
 
 ## to install this whole thing:
 do "Raspberry Pi Setup" below
 
-## battery change:
 
 
-## to add a new dash button:
+## to add a new dash button (or fix after power loss and battery change):
 
 edit this file on home laptop. and use for below.
 set up by bottom of stairs or in living room nr router (need wired lan)
@@ -20,22 +19,52 @@ connect laptop wifi to it (Sweepy Dashmaster)
 
 go into config (http://192.168.1.251, admin/password)
 
-N.B. if you're repairing a failing button, you need to pick a NEW NAME or the old one will trigger actions!
-DON'T just stick 2 on the end or it will match the old rule. Maybe put number in the middle
+N.B. if you're repairing a failing button, go onto pi (with another laptop) and
+sudo service one-second-dash stop
+sudo NO_LAUNCH=1 ./doorbell.py
+
+... to stop launches from known name being reported by AD orange's wifi beacons when we change the name next.
+
+for a new button, you need to pick a NEW NAME which is not just a superset of the old ones,
+or the old actions will trigger!
+i.e. DON'T just stick 2 on the end or it will match the old rule. Maybe put numbers in the middle
 
 change BOTH Wifi Names to Sweepy New Name (allocate from table below), ensure channel 1, save, apply
 go to Wifi Security, unmask password and remember its password
 
-reconnect from laptop to new SSID via wifi. make sure it can reach through to internet [NEEDED!]
+reconnect from laptop to new SSID via wifi.
+
+disconnect AD orange WAN.
+
+--1--
 
 press button til blue flashy light on dash button.
 connect to Amazon ConfigureMe wifi
 check MAC, batt etc at http://192.168.0.1
 
-
 then run ./setup-dashbutton.py 'Sweepy New Name' 'Whatever The Password Was'
 
-(NOTE DOWN THE MAC ADDRESS of the dash button spat out here)
+(NOTE DOWN THE MAC ADDRESS , firmware, battery of the dash button spat out here at https://docs.google.com/spreadsheets/d/1sSGNl8m2li6CBcXt8w1auR_0nDcJlp_58tEBuLWa7P8/edit#gid=0)
+
+
+if that didn't work:
+    --2--
+    Put Dash Button in setup mode by holding down the button until the LED flashes blue.
+    While in setup mode, play this .wav file [afplay write_customer_secret.s.wav] through some earbuds aimed at the Dash Button, or on laptop speakers but ensure balance set all one side (so it's not having to listen to signal from 2 speakers which will mess its reception up).
+    If the LED turns green, the exploit worked!
+        try from --1-- again
+    If the LED turns off, you’re possibly on a firmware version that fixed the vulnerability. Unfortunately, you’re out of luck if this is the case. (unless someone finds another vulnerability)
+
+
+if that didn't work:
+    --3--
+    reconnect WAN to AD orange, make sure (from laptop) it can reach through to internet [NEEDED!]
+
+    press button til blue flashy light on dash button.
+    connect to Amazon ConfigureMe wifi
+
+    then run ./setup-dashbutton.py 'Sweepy New Name' 'Whatever The Password Was'
+
 
 hit http://192.168.1.251 again.
 change BOTH Wifi Names back to Sweepy Dashmaster, save, apply
@@ -46,31 +75,16 @@ change BOTH Wifi Names back to Sweepy Dashmaster, save, apply
 on pi,
 in this repo, add a line to dash_ssids for the new SSID name
 sudo service one-second-dash stop
-sudo ./doorbell.py
+sudo NO_LAUNCH=1 ./doorbell.py
 
 press dash button. check it's firing. ctrl-c.
 
 if it wasn't firing (and maybe emitted red light) try these older techniques....:
 
 
+### aside: further work for noncompliant ones
 
-next try:
-
-Put Dash Button in setup mode by holding down the button until the LED flashes blue.
-Connect to the Amazon ConfigureMe WiFi network and visit http://192.168.0.1.
-You’ll see the button’s hardware (MAC) address. Block its Internet access in your router’s settings. If you don’t do this, the button will get an over-the-air update when it phones home and get bricked.
-While in setup mode, play this .wav file [afplay write_customer_secret.s.wav] through some earbuds aimed at the Dash Button.
-If the LED turns green, the exploit worked! Carry on to step (3).
-If the LED turns off, you’re possibly on a firmware version that fixed the vulnerability. Unfortunately, you’re out of luck if this is the case. (unless someone finds another vulnerability)
-Put the Button in setup mode again.
-Connect to the WiFi network it creates — Amazon ConfigureMe.
-Visit this URL*: http://192.168.0.1/?amzn_ssid=<wifi_network_name>&amzn_pw=<wifi_network_pw>. (obviously substituting wifi_network_name and wifi_network_pw for the desired values)
-
-[from https://blog.christophermullins.com/2019/12/20/rescue-your-amazon-dash-buttons/]
-
-as last resort, try:
-
-longpress, scan for the MAC address
+If all this fails, we could use some buttons in "long press" mode only, scanning for the MAC address
 
     sudo iwlist wlan0 scanning essid 'Amazon ConfigureMe'
 
@@ -81,6 +95,7 @@ longpress, scan for the MAC address
 (I actually fixed these ones with the buffer overrun hack wav)
 
 
+## wiring new buttons up to scipts
 
 ....... once dash signals established:
 
@@ -107,50 +122,12 @@ tail -f /var/log/one-second-dash*
 
 
 
+## existing dash button inventory
+
+see https://docs.google.com/spreadsheets/d/1sSGNl8m2li6CBcXt8w1auR_0nDcJlp_58tEBuLWa7P8/edit#gid=0
 
 
-
-## existing dash buttons:
-
-| SSID               | Logo                  | Location   | Function          | MAC           | firmware    | battery  | status
-|--------------------|-----------------------|------------|-------------------|---------------|-------------|----------|---|
-| Sweepy AmbiPur     | AmbiPur               | hc bed top corner     | HC lights            | 18742E503985  | 60019520_EU | | 2022-12-18 OK
-| Sweepy VitaCoco    | VitaCoco              | rk bed K top    | Slack me for tea | 78E103CF9A21  | 60019520_EU | | 2022-12-18 OK
-| Sweepy Gripey      | Gaviscon              | rk bed R top    | nye playlist      |  |  |  | 2022-12-18 OK
-| Sweepy Gloop Face  | Aveeno                | rk bed R bot      | bed playlist       |  |  |  |  2022-12-18 OK
-| Sweepy Right Guard | Right Guard           | rk bed middle     | rk lights off     | 6837E9A02F5B |  60019520_EU | 80 | 2022-12-18 OK
-| Sweepy Nom Nom     | Pedigree              | rk bedside      | 10 min timer      |  |  |  Flat? CHECK | 2022-12-18 OK
-| Sweepy Fuzz 2 Slash  | Wilkinson             | front door        | all lights & TV off    | AC63BE053798 | 30017420_EU | 60 | 2021-02-03 button OK
-| Sweepy Bin Juice   | Brabantia             | LR above TV (top) | applause          |  |  |  | 2022-12-18 OK
-| Sweepy Scrub Scrub | Ariel                 | LR above TV (mid) | db playlist       | AC63BE8FE729  | 30017420_WS |  | 2022-12-18 OK
-batt#| Sweepy Ralph Bowl  | Dettol                | LR dresser top R  | TV off & Dining lights   | | | | 2021-02-03 button OK
-| Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU | | 2022-12-18 OK
-| Sweepy 2 Puff Buff   | Neutrogena            | kitchen above hall door          | rob playlist      | 50F5DA81D305 | 30017420_WS | 100 2022-12-18 | 2022-12-18 OK
-| Sweepy Babba Plops | Huggies               | hall above kit door R     | Benny Hill        |  |  |  | 2022-12-18 OK
-| Sweepy Dog Breath  | Listerine             | sp bed nr         | nye playlist      |  |  |  | 2022-12-18 OK
-reassign. button ok action not#| Sweepy Zing Ding   | Finish                | sp bed mid     | Tom playlist      | 50F5DA7F0FDC |   |  | 2021-02-03 button OK
-| Sweepy Poo Poo     | Andrex                | sp bed far        | Barry White       |  |  | Flat? CHECK | 2022-12-18 OK
-| Sweepy Fuzz Scrape | Wilkinson             | side hall         | all lights & TV off    |  |  | Flat? CHECK | 2022-12-18 OK
-
-| Sweepy Kleenex         | Kleenex | LOST | - | 8871E55401CF | 60019520_EU | 21
-| Sweepy Poo Plops   | Andrex                | LOST?               | Brett             |
-| Sweepy Puff Jollop | Neutrogena            | LOST?                 | Morrissey         | 50F5DA81D305?
-| Sweepy Stink Mask  | Air Wick              | LOST?                 | Elton John        |
-
-batt#| Sweepy Listerine   | Listerine             | SPARE        |  | 6854FDE4AB15 | 60019520_EU | 66 | 2022-12-18 NEEDS BATT CHG
-
-#| Sweepy Fairy                   | Fairy | loc | fn | 50F5DA0DFE4A | 30017420_EU | 49 | free to set up |
-batt#| Sweepy Andrex          |Andrex | | | | | | dead- battery?
-batt#| Sweepy Play Doh        |Play Doh  | | | | | | dead- battery?
-
-#| Sweepy Simple Solution |Simple Solution | | | 78E103B1C715 | 60019520_WS | 75 |   no worky :-(
-#| Sweepy Nerf            |Nerf | | | AC63BEB3AF75 | 60019520_WS | 65 |   no worky :-(
-#| Sweepy Lily Kitchen    |Lily Kitchen | | | 78E103528035 | 60019520_WS | 70 |   no worky :-(
-#| Sweepy Pampers         |Pampers | | | B47C9CF48BAE | 60019520_WS | 78 | no worky :-(
-#| Sweepy Febreze | Febreze | | | 78E103C9A280  | 60019520_WS | | no worky :-(
-
-
-
+vvv original docs:
 
 # One Second Dash
 

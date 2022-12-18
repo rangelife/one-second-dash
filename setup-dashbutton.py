@@ -55,6 +55,7 @@ def configure_wifi(ssid, password):
     r = h.get("%s/?amzn_ssid=%s&amzn_pw=%s" % (BASE_URL, ssid, password), timeout=5)
     if r.status_code == 200:
         print("+ Dash button configured!")
+        print(r.content)
         return True
 
 
