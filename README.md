@@ -5,41 +5,42 @@ SEE ALSO JOURNAL.txt (above above this)
 ## to install this whole thing:
 do "Raspberry Pi Setup" below
 
-
 ## to add a new dash button:
 
-edit this stuff on pi, via work laptop.
-also identify utility laptop, use that for the below
+edit this file on home laptop. and use for below.
+set up by bottom of stairs or in living room nr router (need wired lan)
 
+plug in AD Orange (Linksys E3000) router
+plug AD Orange lan upstream into main internet connected router
 
-grab AD Orange (Linksys E3000) router
-don't plug in WAN
-plug LAN from utility laptop into lan (not upstream) port 1-4; set ethernet static 192.168.1.99
+connect laptop wifi to it (Sweepy Dashmaster)
 
 go into config (http://192.168.1.251, admin/password)
+
+N.B. if you're repairing a failing button, you need to pick a NEW NAME or the old one will trigger actions!
+DON'T just stick 2 on the end or it will match the old rule. Maybe put number in the middle
+
 change BOTH Wifi Names to Sweepy New Name (allocate from table below), ensure channel 1, save, apply
 go to Wifi Security, unmask password and remember its password
 
-unplug wired conn to laptop.
-
-plug lan (not upstream) into main internet connected router
 reconnect from laptop to new SSID via wifi. make sure it can reach through to internet [NEEDED!]
 
 press button til blue flashy light on dash button.
-connect to Amazon ConfigureMe wifi.
+connect to Amazon ConfigureMe wifi
 
 then run ./setup-dashbutton.py 'Sweepy New Name' 'Whatever The Password Was'
+e.g.
 
 (NOTE DOWN THE MAC ADDRESS of the dash button spat out here)
 
-disconnect laptop wifi, reconnect cable, hit http://192.168.0.249 again.
-change BOTH Wifi Names back to Sweepy Outpost, save, apply
+hit http://192.168.1.251 again.
+change BOTH Wifi Names back to Sweepy Dashmaster, save, apply
 
 
-in this repo, add a line to dash_ssids for the new network name
 
 
 on pi,
+in this repo, add a line to dash_ssids for the new SSID name
 sudo service one-second-dash stop
 sudo ./doorbell.py
 
@@ -77,9 +78,13 @@ longpress, scan for the MAC address
 
 ....... once dash signals established:
 
+push new dash_ssids to github
+
+pull onto laptop
+
 and add a script based on one of the others
 
-and add to the below table
+and add details to the below table
 
 and save and push to github, pull down to pi
 
@@ -108,7 +113,7 @@ batt#| Sweepy Fuzz Slash  | Wilkinson             | front door        | all ligh
 | Sweepy Scrub Scrub | Ariel                 | LR above TV (mid) | db playlist       | AC63BE8FE729  | 30017420_WS |  | 2022-12-18 OK
 batt#| Sweepy Ralph Bowl  | Dettol                | LR dresser top R  | TV off & Dining lights   | | | | 2021-02-03 button OK
 | Sweepy Durabunny   | Duracell              | LR dresser top L  | Seasonal lights     | B47C9C7C2B73  | 50018520_EU | | 2022-12-18 OK
-red!#| Sweepy Puff Buff   | Neutrogena            | kitchen above hall door          | rob playlist      |  |  | Flat? CHECK | 2012-02-03 fail
+red!#| Sweepy 2 Puff Buff   | Neutrogena            | kitchen above hall door          | rob playlist      | 50F5DA81D305 | 30017420_WS | 100 2022-12-18 | 2022-12-18 OK
 | Sweepy Babba Plops | Huggies               | hall above kit door R     | Benny Hill        |  |  |  | 2022-12-18 OK
 | Sweepy Dog Breath  | Listerine             | sp bed nr         | nye playlist      |  |  |  | 2022-12-18 OK
 reassign. button ok action not#| Sweepy Zing Ding   | Finish                | sp bed mid     | Tom playlist      | 50F5DA7F0FDC |   |  | 2021-02-03 button OK
@@ -122,7 +127,7 @@ reassign. button ok action not#| Sweepy Zing Ding   | Finish                | sp
 
 batt#| Sweepy Listerine   | Listerine             | SPARE        |  | 6854FDE4AB15 | 60019520_EU | 66 | 2022-12-18 NEEDS BATT CHG
 
-#| Sweepy Fairy                   | Fairy | | | | | | free to set up
+#| Sweepy Fairy                   | Fairy | loc | fn | 50F5DA0DFE4A | 30017420_EU | 49 | free to set up |
 batt#| Sweepy Andrex          |Andrex | | | | | | dead- battery?
 batt#| Sweepy Play Doh        |Play Doh  | | | | | | dead- battery?
 
