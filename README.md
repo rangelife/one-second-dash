@@ -9,6 +9,14 @@ do "Raspberry Pi Setup" below
 
 ## to add a new dash button (or fix after power loss and battery change):
 
+N.B. if you're repairing a failing button, ssh into pi (with work laptop) and
+sudo service one-second-dash stop
+sudo pkill doorbell
+sudo NO_LAUNCH=1 ./doorbell.py
+
+... to stop launches from known name being reported by AD orange's wifi beacons when we change the name next.
+
+
 edit this file on home laptop. and use for below.
 set up by bottom of stairs or in living room nr router (need wired lan)
 
@@ -19,18 +27,15 @@ connect laptop wifi to it (Sweepy Dashmaster)
 
 go into config (http://192.168.1.251, admin/password)
 
-N.B. if you're repairing a failing button, go onto pi (with another laptop) and
-sudo service one-second-dash stop
-sudo NO_LAUNCH=1 ./doorbell.py
 
-... to stop launches from known name being reported by AD orange's wifi beacons when we change the name next.
 
 for a new button, you need to pick a NEW NAME which is not just a superset of the old ones,
 or the old actions will trigger!
 i.e. DON'T just stick 2 on the end or it will match the old rule. Maybe put numbers in the middle
 
-change BOTH Wifi Names to Sweepy New Name (allocate from table below), ensure channel 1, save, apply
-go to Wifi Security, unmask password and remember its password
+go to Wireless->Wireless Security, unmask password and remember its password
+go to Wireless->Basic Settings, change 2.4G Wifi Name to Sweepy New Name (allocate from table below), ensure channel 1,
+leave 5G as Sweepy Dashmaster, save, apply
 
 reconnect from laptop to new SSID via wifi.
 
@@ -40,40 +45,54 @@ disconnect AD orange WAN.
 
 press button til blue flashy light on dash button.
 connect to Amazon ConfigureMe wifi
-check MAC, batt etc at http://192.168.0.1
+browse to http://192.168.0.1 and leave page there for now...
 
 then run ./setup-dashbutton.py 'Sweepy New Name' 'Whatever The Password Was'
 
-(NOTE DOWN THE MAC ADDRESS , firmware, battery of the dash button spat out here at https://docs.google.com/spreadsheets/d/1sSGNl8m2li6CBcXt8w1auR_0nDcJlp_58tEBuLWa7P8/edit#gid=0)
+(back in browser, NOTE DOWN THE MAC ADDRESS , firmware, battery of the dash button spat out here at https://docs.google.com/spreadsheets/d/1sSGNl8m2li6CBcXt8w1auR_0nDcJlp_58tEBuLWa7P8/edit#gid=0)
 
+if "Dash button configured!" .. and light goes out, see if it worked:
+turn off AD orange... TURN OFF LAPTOP WIFI
+
+press dash button
+
+see work laptop logs for whether it sent probe request, if so we're good!
 
 if that didn't work:
     --2--
+    (if you already did this section, skip to 3)
     Put Dash Button in setup mode by holding down the button until the LED flashes blue.
     While in setup mode, play this .wav file [afplay write_customer_secret.s.wav] through some earbuds aimed at the Dash Button, or on laptop speakers but ensure balance set all one side (so it's not having to listen to signal from 2 speakers which will mess its reception up).
     If the LED turns green, the exploit worked!
         try from --1-- again
     If the LED turns off, you’re possibly on a firmware version that fixed the vulnerability. Unfortunately, you’re out of luck if this is the case. (unless someone finds another vulnerability)
 
-
-if that didn't work:
+then:
     --3--
-    reconnect WAN to AD orange, make sure (from laptop) it can reach through to internet [NEEDED!]
+    turn AD orange on again, reconnect WAN to AD orange, make sure (from laptop) it can reach through to internet [NEEDED!]
 
     press button til blue flashy light on dash button.
     connect to Amazon ConfigureMe wifi
 
     then run ./setup-dashbutton.py 'Sweepy New Name' 'Whatever The Password Was'
 
+if "Dash button configured!" .. and light goes out, see if it worked:
+turn off AD orange... TURN OFF LAPTOP WIFI
 
-hit http://192.168.1.251 again.
+press dash button
+
+see work laptop log for whether it sent probe request, if so we're good! if not, tough luck :-( take battery out and icebox the dash button in case anyone ever figures out how to revive them
+
+
+
+from laptop reconnect to AD orange Sweepy Dashmaster, hit http://192.168.1.251 again.
 change BOTH Wifi Names back to Sweepy Dashmaster, save, apply
 
 
 
 
 on pi,
-in this repo, add a line to dash_ssids for the new SSID name
+if it's a new button/SSID, in this repo, add a line to dash_ssids for the new SSID name
 sudo service one-second-dash stop
 sudo NO_LAUNCH=1 ./doorbell.py
 
