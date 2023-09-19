@@ -85,4 +85,3 @@ while True:
         if not found_known:
             if 'Sweepy' in line:
                 print "not in dash_ssids: " + line
-

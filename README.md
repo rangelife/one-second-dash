@@ -2,12 +2,27 @@
 
 SEE ALSO JOURNAL.txt (above above this in dropbox)
 
-## to install this whole thing:
+
+## RECIPE: maintenance scan
+
+get work laptop and home laptop.
+
+work through list below..
+
+### existing dash button inventory
+
+see https://docs.google.com/spreadsheets/d/1sSGNl8m2li6CBcXt8w1auR_0nDcJlp_58tEBuLWa7P8/edit#gid=0
+
+
+
+## RECIPE: to install this whole thing:
 do "Raspberry Pi Setup" below
 
 
 
-## to add a new dash button (or fix after power loss and battery change):
+
+
+## RECIPE: to add a new dash button (or fix after power loss and battery change):
 
 N.B. if you're repairing a failing button, ssh into pi (with work laptop) and
 sudo service one-second-dash stop
@@ -140,10 +155,6 @@ press button, check it's firing with:
 tail -f /var/log/one-second-dash*
 
 
-
-## existing dash button inventory
-
-see https://docs.google.com/spreadsheets/d/1sSGNl8m2li6CBcXt8w1auR_0nDcJlp_58tEBuLWa7P8/edit#gid=0
 
 
 vvv original docs:
