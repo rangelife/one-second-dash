@@ -4,7 +4,7 @@
 . /etc/environment
 
 # tell ifttt
-curl https://maker.ifttt.com/trigger/dash-$1/with/key/$IFTTT_MAKER_KEY
+#curl https://maker.ifttt.com/trigger/dash-$1/with/key/$IFTTT_MAKER_KEY || true 
 
 
 
