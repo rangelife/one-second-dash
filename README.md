@@ -7,6 +7,12 @@ SEE ALSO JOURNAL.txt (above above this in dropbox)
 
 get work laptop and home laptop.
 
+work laptop:
+```
+ssh pi
+tail -f /var/log/one-second-dash.log
+```
+
 work through list below..
 
 ### existing dash button inventory
