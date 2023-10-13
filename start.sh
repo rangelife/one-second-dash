@@ -20,5 +20,5 @@ cd $(dirname $(readlink -f $0))
 # The break allows us to control-C out of this loop.
 while true; do
   sudo ./setup_monitor_interface.sh "$CHANNEL" "$CAP_FIELD" 2>&1
-  sudo ./doorbell.py 2>&1
+  sudo stdbuf -i0 -o0 -e0 ./doorbell.py 2>&1
 done
