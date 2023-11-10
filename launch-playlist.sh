@@ -77,13 +77,13 @@ elif [ "$1" == Sweepy-Zing-Ding ]; then
     volume=80
     shuffle=0
 
-elif [ "$1" == Sweepy-Puff-Jollop ]; then
+# elif [ "$1" == Sweepy-Puff-Jollop ]; then
 
-    player=bedroom
-    // moz
-    playlist=spotify:playlist:3AYVicQvBNNJFNobscpMMt
-    volume=80
-    shuffle=1
+#     player=bedroom
+#     // moz
+#     playlist=spotify:playlist:3AYVicQvBNNJFNobscpMMt
+#     volume=80
+#     shuffle=1
 
 elif [ "$1" == Sweepy-Stink-Mask ]; then
 
