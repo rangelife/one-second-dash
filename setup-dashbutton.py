@@ -2,7 +2,7 @@
 import requests
 import re
 import sys
-import urllib
+import urllib.parse
 
 # Initial work from: https://mpetroff.net/2016/07/new-amazon-dash-button-teardown-jk29lp/
 
@@ -14,17 +14,26 @@ def wait_for_device():
     print("* Long press the dash button until LED light blinks in blue")
     print("* Connect to Wifi with SSID \"Amazon ConfigureMe\"")
     print("* Waiting for connection...")
+    # r = h.get(BASE_URL, timeout=5)
+    # print(r.content)
     while True:
         try:
-            r = h.get(BASE_URL, timeout=1)
-            if 'Amazon Dash' in r.content:
+            r = h.get(BASE_URL, timeout=5)
+            content = str(r.content)
+            print(content)
+            if 'Amazon Dash' in str(r.content):
+                print("MATCH")
+                print(content)
                 break
+            # else:
+            #     print(r.content)
         except:
+            # print("timed out")
             pass
-        else:
-            break
+        # else:
+        #     break
     print("+ Connected!")
-    content = r.content
+    content = str(r.content)
     serial = re.findall('Serial Number</th>[^/]+>([A-Z0-9_]+)</td', content, re.DOTALL)[0]
     mac = re.findall('MAC Address</th>[^/]+>([A-Z0-9_]+)</td', content, re.DOTALL)[0]
     firmware = re.findall('Firmware</th>[^/]+>([A-Z0-9_]+)</td', content, re.DOTALL)[0]
@@ -35,8 +44,8 @@ def wait_for_device():
     return mac
 
 def configure_wifi(ssid, password):
-    ssid = urllib.quote(ssid)
-    password = urllib.quote(password)
+    ssid = urllib.parse.quote(ssid)
+    password = urllib.parse.quote(password)
     print("* Configure Dash button to connect to \"%s\"" % ssid)
     # is the ssid in range ?
     r = h.get(BASE_URL, headers={'Content-Type': 'application/json'}, timeout=5)

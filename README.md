@@ -39,12 +39,13 @@ sudo NO_LAUNCH=1 ./doorbell.py
 
 
 edit this file on home laptop. and use for below.
-set up by bottom of stairs or in living room nr router (need wired lan)
+set up by bottom of stairs
+#> or in living room nr router (need wired lan)
 
 plug in AD Orange (Linksys E3000) router
 plug AD Orange lan upstream into main internet connected router
 
-connect laptop wifi to it (Sweepy Dashmaster)
+connect home laptop wifi to it (Sweepy Dashmaster)
 
 go into config (http://192.168.1.251, admin/password)
 
