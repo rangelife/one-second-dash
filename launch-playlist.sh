@@ -87,11 +87,11 @@ elif [ "$1" == Sweepy-Zing-Ding ]; then
 
 elif [ "$1" == Sweepy-Stink-Mask ]; then
 
-    player=bedroom
-    // elton
-    playlist=spotify:playlist:17nPmGGi4DzUeW8mRLJnpj
-    volume=80
-    shuffle=1
+#    player=bedroom
+#    // elton
+#    playlist=spotify:playlist:17nPmGGi4DzUeW8mRLJnpj
+#    volume=80
+#    shuffle=1
 
 elif [ "$1" == Sweepy-Gloop-Face ]; then
 

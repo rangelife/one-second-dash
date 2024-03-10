@@ -85,3 +85,7 @@ while True:
         if not found_known:
             if 'Sweepy' in line:
                 print "not in dash_ssids: " + line
+    else:
+        if '78:e1:03:cf:9a:21' in line:
+            print "vita coco!"
+
