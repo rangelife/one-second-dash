@@ -10,6 +10,7 @@ get work laptop and home laptop.
 work laptop:
 ```
 ssh pi
+touch rattus/one-second-dash/NO_LAUNCH
 tail -f /var/log/one-second-dash.log
 ```
 
@@ -31,14 +32,12 @@ do "Raspberry Pi Setup" below
 ## RECIPE: to add a new dash button (or fix after power loss and battery change):
 
 N.B. if you're repairing a failing button, ssh into pi (with work laptop) and
-sudo service one-second-dash stop
-sudo pkill doorbell
-sudo NO_LAUNCH=1 ./doorbell.py
+touch rattus/one-second-dash/NO_LAUNCH
 
 ... to stop launches from known name being reported by AD orange's wifi beacons when we change the name next.
 
 
-edit this file on home laptop. and use for below.
+edit this file on home laptop (NOT sshed into pi). and use for below.
 set up by bottom of stairs
 #> or in living room nr router (need wired lan)
 
@@ -115,10 +114,11 @@ change BOTH Wifi Names back to Sweepy Dashmaster, save, apply
 
 on pi,
 if it's a new button/SSID, in this repo, add a line to dash_ssids for the new SSID name
-sudo service one-second-dash stop
-sudo NO_LAUNCH=1 ./doorbell.py
+
+rm rattus/one-second-dash/NO_LAUNCH
 
 press dash button. check it's firing. ctrl-c.
+
 
 if it wasn't firing (and maybe emitted red light) try these older techniques....:
 

@@ -1,5 +1,7 @@
 #!/usr/bin/python
 import os
+import os.path
+
 import signal
 import subprocess
 import sys
@@ -39,6 +41,11 @@ def do_ring(ssid):
     if os.environ.get("NO_LAUNCH"):
         print "Skipping execute since NO_LAUNCH set"
         return
+
+    if os.path.isfile("NO_LAUNCH"):
+        print "Skipping execute since NO_LAUNCH file exists"
+        return
+
 
     print "Doing ring for "+ssid
 #    return
