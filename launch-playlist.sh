@@ -70,7 +70,7 @@ elif [ "$1" == Sweepy-Poo-Plops ]; then
     shuffle=1
 
 elif [ "$1" == Sweepy-Zing-Ding ]; then
-
+# moved to homeassistant
     player=kitchen
     // tom
     playlist=spotify:playlist:3Ewkbgul1ggLp4dnJQgKPb
@@ -92,6 +92,7 @@ elif [ "$1" == Sweepy-Stink-Mask ]; then
 #    playlist=spotify:playlist:17nPmGGi4DzUeW8mRLJnpj
 #    volume=80
 #    shuffle=1
+    echo
 
 elif [ "$1" == Sweepy-Gloop-Face ]; then
 
